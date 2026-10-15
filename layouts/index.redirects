@@ -1,0 +1,4 @@
+# Generated from data/redirects.yaml. Do not edit by hand.
+{{ range site.Data.redirects -}}
+{{ .from }} {{ .to }} 301
+{{ end -}}

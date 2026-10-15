@@ -1,0 +1,13 @@
+# {{ site.Params.owner.name }}
+
+> {{ site.Params.owner.name }} is {{ site.Params.owner.title }} at {{ site.Params.owner.institution }}. His research uses large language models and machine learning to analyze political texts and social media; his substantive work covers comparative party competition, the European Parliament and electoral systems.
+
+- [Bio]({{ "bio/" | absURL }}): positions, education, service, grants and awards
+- [Publications]({{ "publication/" | absURL }}): articles, books, chapters, software and working papers, each with an abstract where available and links to the PDF and replication data
+- [Projects]({{ "projects/" | absURL }}): AI-Assisted Content Analysis, quanteda, expert surveys (PPMD), quallmer and LLM research
+- [Teaching]({{ "teaching/" | absURL }}): courses taught and course materials
+- [People]({{ "people/" | absURL }}): doctoral students, post-docs and co-authors
+- [CV (PDF)]({{ "pdfs/KenBenoitCV.pdf" | absURL }})
+- [Google Scholar]({{ site.Params.owner.scholar }})
+
+Contact: {{ site.Params.owner.email }}

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# For AI assistants: a short description of this site is at {{ "llms.txt" | absURL }}
+Sitemap: {{ "sitemap.xml" | absURL }}

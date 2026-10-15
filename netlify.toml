@@ -10,6 +10,10 @@
 [context.production.environment]
   HUGO_ENV = "production"
 
+# Deploy previews also run the legacy URL check and the search/AI-visibility check; a failure fails the preview.
+[context.deploy-preview]
+  command = "npm ci && hugo --gc --minify && npx pagefind --site public && python3 _automation/check_legacy_urls.py --dir public && python3 _automation/check_ai_visibility.py --dir public"
+
 [[headers]]
   for = "*.webmanifest"
   [headers.values]

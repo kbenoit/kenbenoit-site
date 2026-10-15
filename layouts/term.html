@@ -1,0 +1,14 @@
+{{ define "main" }}
+<main id="main" class="wrap page">
+  <p class="crumbs"><a href="{{ site.Home.RelPermalink }}">Home</a> <span aria-hidden="true">/</span> {{ .Data.Plural | title }}</p>
+  <h1>{{ .Title }}</h1>
+  <ul class="post-list">
+    {{ range .Pages.ByDate.Reverse }}
+    <li>
+      <span class="post-date">{{ if eq .Section "publication" }}{{ .Date.Format "2006" }}{{ else }}{{ .Date.Format "Jan 2, 2006" }}{{ end }}</span>
+      <a href="{{ .RelPermalink }}">{{ .Title | safeHTML }}</a>
+    </li>
+    {{ end }}
+  </ul>
+</main>
+{{ end }}
