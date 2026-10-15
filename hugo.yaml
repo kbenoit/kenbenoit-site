@@ -67,6 +67,7 @@ params:
       - { label: "Google Scholar", icon: googlescholar, url: "https://scholar.google.com/citations?user=hp1p9TEAAAAJ" }
       - { label: "ORCID", icon: orcid, url: "https://orcid.org/0000-0002-0797-564X" }
       - { label: "X", icon: x, url: "https://x.com/kenbenoit" }
+      - { label: "Bluesky", icon: bluesky, url: "https://bsky.app/profile/kenbenoit.bsky.social" }
       - { label: "LinkedIn", icon: linkedin, url: "https://www.linkedin.com/in/krbenoit/" }
       - { label: "GitHub", icon: github, url: "https://github.com/kbenoit" }
       - { label: "Stack Overflow", icon: stackoverflow, url: "https://stackoverflow.com/users/4158274/ken-benoit" }
