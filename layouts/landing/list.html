@@ -28,6 +28,7 @@
     <ul class="proj-grid">
       {{ range site.Data.projects }}
       <li class="proj">
+        {{ with .image }}{{ with resources.Get (printf "projects/%s" .) }}<img class="proj-img" src="{{ .RelPermalink }}" width="{{ div .Width 2 }}" height="{{ div .Height 2 }}" alt="" loading="lazy">{{ end }}{{ end }}
         <h3 class="proj-title">{{ if .url }}<a href="{{ .url }}" rel="noopener">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}</h3>
         <p class="proj-desc">{{ .description }}</p>
         {{ with .links }}<p class="proj-links">{{ range . }}<a href="{{ .url }}" rel="noopener">{{ .name }} &rarr;</a> {{ end }}</p>{{ end }}

@@ -158,7 +158,7 @@ Owner decision (15 October 2026): the home page shows three projects as equal ca
 2. **quanteda:** the quanteda family of R packages for text analysis.
 3. **Expert surveys (PPMD):** the Party Policy in Modern Democracies expert survey dataset.
 
-Each card has a title, one-sentence description and a link. Until the Projects pages exist (Phase 3), the links go to the projects' own sites. The `/projects/` page (§8.2) should list these three and the other projects (quallmer, LLM research).
+Each card has a thumbnail (64px high, from `assets/projects/`, set per project in the data file), a title, a one-sentence description and a link. The images are the quallmer logo (used for the book), the quanteda logo and the cover of *Party Policy in Modern Democracies*, all supplied by the owner. Until the Projects pages exist (Phase 3), the links go to the projects' own sites. The `/projects/` page (§8.2) should list these three and the other projects (quallmer, LLM research).
 
 ### 6.3 Research areas
 
