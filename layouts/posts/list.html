@@ -1,0 +1,14 @@
+{{ define "main" }}
+<main id="main" class="wrap page" data-pagefind-body>
+  <h1>{{ .Title }}</h1>
+  <ul class="post-list">
+    {{ range .Pages.ByDate.Reverse }}
+    <li>
+      <span class="post-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+      <a href="{{ .RelPermalink }}">{{ .Title | safeHTML }}</a>
+      {{ with .GetTerms "categories" }}<span class="post-cats">{{ range $i, $t := . }}{{ if $i }}, {{ end }}<a href="{{ $t.RelPermalink }}">{{ $t.LinkTitle }}</a>{{ end }}</span>{{ end }}
+    </li>
+    {{ end }}
+  </ul>
+</main>
+{{ end }}

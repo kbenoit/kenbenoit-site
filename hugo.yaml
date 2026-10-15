@@ -20,8 +20,15 @@ taxonomies:
   publication_type: publication_types
 
 permalinks:
-  publication: /publication/:contentbasename/
-  projects: /projects/:contentbasename/
+  page:
+    publication: /publication/:contentbasename/
+    projects: /projects/:contentbasename/
+  term:
+    tags: /tag/:slug/
+    categories: /category/:slug/
+  taxonomy:
+    tags: /tags/
+    categories: /categories/
 
 menu:
   main:

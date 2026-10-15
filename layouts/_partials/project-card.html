@@ -1,0 +1,7 @@
+{{- /* Input: a project dict from data/projects.yaml */ -}}
+<li class="proj">
+  {{ with .image }}{{ with resources.Get (printf "projects/%s" .) }}<img class="proj-img" src="{{ .RelPermalink }}" width="{{ div .Width 2 }}" height="{{ div .Height 2 }}" alt="" loading="lazy">{{ end }}{{ end }}
+  <h3 class="proj-title"><a href="{{ printf "projects/%s/" .slug | relURL }}">{{ .title }}</a></h3>
+  <p class="proj-desc">{{ .description }}</p>
+  {{ with .links }}<p class="proj-links">{{ range . }}<a href="{{ .url }}" rel="noopener">{{ .name }} &rarr;</a> {{ end }}</p>{{ end }}
+</li>

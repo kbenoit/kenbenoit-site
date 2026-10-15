@@ -1,0 +1,10 @@
+{{ define "main" }}
+<main id="main" class="wrap page" data-pagefind-body>
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ site.Home.RelPermalink }}">Home</a> <span aria-hidden="true">/</span> <a href="{{ "posts/" | relURL }}">Blog</a></nav>
+  <article>
+    <h1 data-pagefind-meta="title">{{ .Title | safeHTML }}</h1>
+    <p class="post-meta">{{ .Date.Format "Jan 2, 2006" }}{{ with .GetTerms "categories" }} · {{ range $i, $t := . }}{{ if $i }}, {{ end }}<a href="{{ $t.RelPermalink }}">{{ $t.LinkTitle }}</a>{{ end }}{{ end }}</p>
+    <div class="prose page-body-text">{{ .Content }}</div>
+  </article>
+</main>
+{{ end }}

@@ -266,7 +266,7 @@ Put them under headings: Positions · Education · Service · Grants · Awards.
 
 ### 8.2 Projects
 
-The `/projects/` list page shows the four projects (same order as §6.2), then an "Other software" list.
+The `/projects/` list page shows five projects as cards (the three on the home page first, then quallmer and LLM research, set in `data/projects.yaml`), then an "Other software" list.
 
 **Each project page** (`/projects/<slug>/`) has a short description, links, related publications (pulled automatically from publications that share the project's tag) and an image if available.
 

@@ -1,0 +1,23 @@
+{{ define "main" }}
+<main id="main" class="wrap page" data-pagefind-body>
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ site.Home.RelPermalink }}">Home</a> <span aria-hidden="true">/</span> <a href="{{ "projects/" | relURL }}">Projects</a></nav>
+  <div class="prose page-body-text">
+    {{ with .Params.image }}{{ with resources.Get (printf "projects/%s" .) }}<img class="proj-img proj-img-lg" src="{{ .RelPermalink }}" width="{{ div .Width 2 }}" height="{{ div .Height 2 }}" alt="">{{ end }}{{ end }}
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+    {{ with .Params.links }}
+    <ul class="actions">{{ range . }}<li><a class="btn" href="{{ .url }}" rel="noopener">{{ .name }}</a></li>{{ end }}</ul>
+    {{ end }}
+  </div>
+  {{- $related := slice -}}
+  {{- with .Params.pub_tag }}{{ $related = where site.RegularPages "Params.tags" "intersect" (slice .) }}{{ end -}}
+  {{ if $related }}
+  <section class="related">
+    <h2>Related publications</h2>
+    <ol class="cite-list">
+      {{ range sort $related "Weight" }}<li class="cite">{{ partial "citation.html" (dict "page" . "actions" false) }}</li>{{ end }}
+    </ol>
+  </section>
+  {{ end }}
+</main>
+{{ end }}
