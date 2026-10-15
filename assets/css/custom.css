@@ -95,6 +95,19 @@ a:hover { color: var(--color-link-hover-text); }
 }
 .btn:hover { background: var(--color-accent); color: #fff; }
 
+/* ---- Social icon row ---- */
+.social { list-style: none; margin: 1.25rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.social-link {
+  display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px;
+  border-radius: 999px; background: var(--color-surface); border: 1px solid var(--color-border);
+  color: var(--color-accent); text-decoration: none; transition: background-color 0.15s, color 0.15s;
+}
+.social-link svg { width: 17px; height: 17px; fill: currentColor; }
+.social-link svg[stroke] { fill: none; }
+.social-link:hover { background: var(--color-accent); border-color: var(--color-accent); color: #fff; }
+.social-cv { width: auto; padding: 0 0.8rem; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.04em; }
+@media (min-width: 900px) { .social-link { width: 36px; height: 36px; } }
+
 /* ---- Home hero ---- */
 .hero { display: flex; flex-direction: column; gap: 1.75rem; padding-top: 3rem; padding-bottom: 4rem; }
 .hero-photo { width: 150px; height: 150px; border-radius: 12px; object-fit: cover; box-shadow: var(--shadow-soft); flex: none; }

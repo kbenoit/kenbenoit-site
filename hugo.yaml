@@ -61,6 +61,15 @@ params:
     scholar: "https://scholar.google.com/citations?user=hp1p9TEAAAAJ"
     github: "https://github.com/kbenoit"
     cv: "/pdfs/KenBenoitCV.pdf"
+    # Icon row on the home page, in order. Icons live in assets/icons/<icon>.svg.
+    social:
+      - { label: "Email", icon: email, url: "mailto:kbenoit@smu.edu.sg" }
+      - { label: "Google Scholar", icon: googlescholar, url: "https://scholar.google.com/citations?user=hp1p9TEAAAAJ" }
+      - { label: "ORCID", icon: orcid, url: "https://orcid.org/0000-0002-0797-564X" }
+      - { label: "X", icon: x, url: "https://x.com/kenbenoit" }
+      - { label: "LinkedIn", icon: linkedin, url: "https://www.linkedin.com/in/krbenoit/" }
+      - { label: "GitHub", icon: github, url: "https://github.com/kbenoit" }
+      - { label: "Stack Overflow", icon: stackoverflow, url: "https://stackoverflow.com/users/4158274/ken-benoit" }
     # Short orientation text for the home page; the full bio lives on /bio/.
     intro: >-
       His research uses large language models and machine learning to analyze
