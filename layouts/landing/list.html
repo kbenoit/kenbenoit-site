@@ -26,7 +26,7 @@
   <section id="projects" class="home-section" aria-labelledby="proj-h">
     <h2 id="proj-h">Projects</h2>
     <ul class="proj-grid">
-      {{ range where site.Data.projects "home" true }}{{ partial "project-card.html" . }}{{ end }}
+      {{ range where site.Data.projects "home" true }}{{ partial "project-card.html" (dict "p" . "home" true) }}{{ end }}
     </ul>
   </section>
 
