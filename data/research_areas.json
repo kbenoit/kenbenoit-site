@@ -43,16 +43,6 @@
     ]
   },
   {
-    "slug": "electoral-systems",
-    "title": "Electoral systems",
-    "featured": [
-      "benoit-2007-electoral-laws-political-consequences",
-      "benoit-2004-models-electoral-system-change",
-      "benoit-2006-duvergers-law-study-electoral",
-      "benoit-2001-district-magnitude-electoral-formula"
-    ]
-  },
-  {
     "slug": "campaign-spending",
     "title": "Campaign spending",
     "featured": [
@@ -60,6 +50,16 @@
       "benoit-2010-incumbent-challenger-campaign-spending",
       "benoit-2003-few-euros-campaign-spending",
       "benoit-2003-campaign-spending-local-government"
+    ]
+  },
+  {
+    "slug": "electoral-systems",
+    "title": "Electoral systems",
+    "featured": [
+      "benoit-2007-electoral-laws-political-consequences",
+      "benoit-2004-models-electoral-system-change",
+      "benoit-2006-duvergers-law-study-electoral",
+      "benoit-2001-district-magnitude-electoral-formula"
     ]
   },
   {
