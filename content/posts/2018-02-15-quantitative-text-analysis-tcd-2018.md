@@ -157,7 +157,7 @@ Building on the Naive Bayes classifier, we introduce the “Wordscores” method
 
 #### Resources
 
-- [Exercise 5: Classifying legal documents and legislative speeches.](/assets/courses/tcd2018qta/exercise5.html)  
+- Exercise 5: Classifying legal documents and legislative speeches.  
 
 
 ## Final Assignment

@@ -19,7 +19,7 @@ Required:
 
 Recommended:
 
-[Kenneth Benoit and Michael Marsh. "The Campaign Value of Incumbency: A New Solution to the Puzzle of Less Effective Incumbent Spending."Trinity College manuscript.](/pdfs/cvi_7jan2008.pdf) 
+Kenneth Benoit and Michael Marsh. "The Campaign Value of Incumbency: A New Solution to the Puzzle of Less Effective Incumbent Spending."Trinity College manuscript. 
 
 [Moon, Woojin. 2006. "The Paradox of Less Effective Incumbent Spending: Theory and Tests."_British Journal of Political Science_ 36: 705"721.](/pdfs/Moon_BJPS_2006.pdf)
 

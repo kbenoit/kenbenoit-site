@@ -71,7 +71,7 @@ This session will cover fundamentals, including the continuum from traditional 
 **Resources:**
 
 * [Exercise 1: Working with Texts in quanteda](/assets/courses/tcd2016qta/exercise1.html)
-* _[Exercise 1 solution](/assets/courses/tcd2016qta/exercise1_answers.html)_
+* _Exercise 1 solution_
 * [Example code for Week 1](/assets/courses/tcd2016qta/day1examples.R) (using [quanteda](http://github.com/kbenoit/quanteda)).
 ###**[Session 2: Quantitative methods for comparing texts](/assets/courses/tcd2016qta/QTA_TCD_Day2.pdf)**
 
@@ -100,7 +100,7 @@ Here we focus on quantitative methods for describing texts, focusing on summary 
 
 - [Exercise 2: Describing and comparing texts and their features](/assets/courses/tcd2016qta/exercise2.html)
 
-- _[Exercise 2 solution](/assets/courses/tcd2016qta/exercise2_solution.html)_
+- _Exercise 2 solution_
 
 - [Example code for Week 2](/assets/courses/tcd2016qta/day2examples.R)
 

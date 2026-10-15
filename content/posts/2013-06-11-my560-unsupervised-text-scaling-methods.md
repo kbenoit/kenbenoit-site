@@ -11,5 +11,5 @@ Here are the slides and files from my &#8220;Unsupervised  Text Scaling Methods
 
   * [Slides here](/pdfs/MY560_QTA3_Unsupervised.pdf)
   * [Lab Exercise here](/pdfs/MY560_QTA3_Unsupervised_Lab.pdf)
-  * Files for lab exercise: the [amicus briefs](/assets/files/amicuscuriae.zip) and the [Irish 2010 budget speeches](/assets/files/budget2010.zip)
+  * Files for lab exercise: the amicus briefs and the Irish 2010 budget speeches
 
