@@ -150,20 +150,19 @@ Brand on the left, links on the right, search icon (mysite navbar rules apply):
 - **Buttons, all in one style:** Download CV · Email · Google Scholar · GitHub
 - **Mobile:** the photo stacks above the text.
 
-### 6.2 Projects (one featured, three cards)
+### 6.2 Projects (three cards)
 
-Four projects, each with its own page at `/projects/<slug>/` (§8.2). Set the order and the featured project in `data/projects.yaml`, so they're easy to change.
+Owner decision (15 October 2026): the home page shows three projects as equal cards, set in `data/projects.yaml`, replacing the featured band and four cards originally planned:
 
-- **Featured, full-width band** (like Brandon's featured book): **LLM research**. Lead with the AJPS 2026 paper, "Using Large Language Models to Analyze Political Texts Through Natural Language Understanding", plus West European Politics 2026 ("Measuring issue salience for political parties using LLMs").
-- **Then a row of three cards:**
-  1. **quallmer:** R package for qualitative analysis with LLMs (with Seraphine F. Maerz)
-  2. **quanteda:** the quanteda family of R packages for text analysis
-  3. **Party Policy in Modern Democracies:** the 2006 expert survey project and book (with Michael Laver)
-- **Each card shows** a title, one-sentence description, an image if available, and a "More →" link to the project page.
+1. **AI-Assisted Content Analysis:** the owner's book under contract with Sage, building on quallmer and the work using LLMs.
+2. **quanteda:** the quanteda family of R packages for text analysis.
+3. **Expert surveys (PPMD):** the Party Policy in Modern Democracies expert survey dataset.
+
+Each card has a thumbnail (64px high, from `assets/projects/`, set per project in the data file), a title, a one-sentence description and a link. The images are the quallmer logo (used for the book), the quanteda logo and the cover of *Party Policy in Modern Democracies*, all supplied by the owner. Until the Projects pages exist (Phase 3), the links go to the projects' own sites. The `/projects/` page (§8.2) should list these three and the other projects (quallmer, LLM research).
 
 ### 6.3 Research areas
 
-These are collapsible accordions, as mysite specifies. Each area shows 3–5 featured items and a "View all →" link to the publications list filtered to that area.
+Owner decision (15 October 2026): research areas and selected publications are one section, **Selected publications**, in the style of Stefan Müller's home page. Each area is a small uppercase heading with three featured items (a monogram tile, the venue in bold italics with the year, and the title as a link) and a "View all N →" link to the publications list filtered to that area. This replaces mysite's accordions and the separate six-item featured list in §6.4. The section keeps the anchor `#research-areas`.
 
 **Areas (decided), in this order:**
 
@@ -225,7 +224,7 @@ Tabs, each showing a live count as on Brandon's site: **All · Articles · Books
 **`links` buttons, in this order:**
 1. **PDF:** the existing local file at `/pdfs/<filename>`. **Do not move or rename it.**
 2. **Publisher's Version:** `https://doi.org/<doi>`
-3. **Replication:** the Dataverse DOI, or a local `/files/<zip>`
+3. **Data and Code:** the Dataverse DOI, or a local `/files/<zip>` (a separate **Data** and **Code** link where both exist)
 4. **Appendix** and **Slides,** where they exist
 
 **Award badges:**
@@ -235,26 +234,19 @@ Tabs, each showing a live count as on Brandon's site: **All · Articles · Books
 
 ### 7.3 List-page features
 
-Implement all of mysite's required list-page features:
-- sticky tabs
-- sidebar search
-- research-area filter
-- year filter
-- sort
-- "X of Y results"
-- BibTeX export of the visible results
-- URL hash sync
-- dense citation rows
-- server-rendered HTML
-
-Add Brandon's per-entry theme-tag chips.
+Modelled on Stefan Müller's list (owner decision, 15 October 2026), replacing mysite's sidebar:
+- **Citation lines in the old CV style:** `2026. “Title.” **Journal** 70(4): 1589–1605 (with Co-author, Co-author).` The journal or book title is bold italic at the same size as the title; the owner's name is omitted and co-authors follow as "(with …)".
+- **A row of small action links under each citation:** an expandable **Abstract** (where one exists), **PDF**, **Publisher's Version**, **Data and Code**, **Appendix**, and anything else worth linking (for example press coverage such as The Conversation). Any link in the front matter `links:` list appears here.
+- Sticky type tabs with live counts, and a strip of **topic pills** (the seven research areas) with live counts. No sidebar and no dropdowns.
+- A search field, an "X of Y results" count, and BibTeX export of the visible results.
+- URL hash sync (for example `#articles&area=text-as-data`), and server-rendered HTML so the list works without JavaScript.
 
 ### 7.4 Cover images
 
-**Override of mysite.** Do not scrape journal cover images.
-
-- Use **book covers only** (*Party Policy in Modern Democracies*; *Intra-Party Politics and Coalition Governments*).
-- Use the publisher's image, credited in the page's front matter.
+Owner decision (15 October 2026), replacing the original book-covers-only rule:
+- The home page's Selected publications show a small portrait thumbnail (48×64px, cropped from the top) for each journal, as on Stefan Müller's site. Covers are the publishers' own images, stored in `assets/covers/` and mapped by venue in `data/journal_covers.yaml` with the publisher credited.
+- A journal with no usable cover (or only a "cover not available" placeholder) gets a monogram tile of the same size. Delete a mapping to fall back to the monogram.
+- Book covers for the two books are still to be added from the publisher, credited in the page's front matter.
 
 ---
 

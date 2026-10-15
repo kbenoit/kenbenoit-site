@@ -1,0 +1,12 @@
+# Journal cover thumbnails for the home page, keyed by the `venue` of a publication.
+# Covers are the publishers' images, shown as small thumbnails; delete an entry to fall back to a monogram tile.
+"American Journal of Political Science": { file: american-journal-of-political-science.jpg, credit: "Cover image: Wiley", source: "https://onlinelibrary.wiley.com/journal/15405907" }
+"West European Politics": { file: west-european-politics.jpg, credit: "Cover image: Taylor & Francis", source: "https://www.tandfonline.com/journals/fwep20" }
+"American Political Science Review": { file: american-political-science-review.jpg, credit: "Cover image: Cambridge University Press", source: "https://www.cambridge.org/core/journals/american-political-science-review" }
+"Legislative Studies Quarterly": { file: legislative-studies-quarterly.jpg, credit: "Cover image: Wiley", source: "https://onlinelibrary.wiley.com/journal/19399162" }
+"British Journal of Political Science": { file: british-journal-of-political-science.jpg, credit: "Cover image: Cambridge University Press", source: "https://www.cambridge.org/core/journals/british-journal-of-political-science" }
+"French Politics": { file: french-politics.jpg, credit: "Cover image: Springer Nature", source: "https://link.springer.com/journal/41253" }
+"Journal of Theoretical Politics": { file: journal-of-theoretical-politics.jpg, credit: "Cover image: SAGE", source: "https://journals.sagepub.com/home/jtp" }
+"Journal of Politics": { file: journal-of-politics.jpg, credit: "Cover image: University of Chicago Press", source: "https://www.journals.uchicago.edu/toc/jop/current" }
+"Political Research Quarterly": { file: political-research-quarterly.jpg, credit: "Cover image: SAGE", source: "https://journals.sagepub.com/home/prq" }
+"Party Politics": { file: party-politics.jpg, credit: "Cover image: SAGE", source: "https://journals.sagepub.com/home/ppq" }

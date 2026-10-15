@@ -19,7 +19,59 @@
         {{ end }}
         <li><a class="social-link social-cv" href="{{ $o.cv | relURL }}" title="Download CV">CV</a></li>
       </ul>
+      <p class="hero-more"><a href="#publications">Selected publications &darr;</a></p>
     </div>
+  </section>
+
+  <section id="projects" class="home-section" aria-labelledby="proj-h">
+    <h2 id="proj-h">Projects</h2>
+    <ul class="proj-grid">
+      {{ range site.Data.projects }}
+      <li class="proj">
+        {{ with .image }}{{ with resources.Get (printf "projects/%s" .) }}<img class="proj-img" src="{{ .RelPermalink }}" width="{{ div .Width 2 }}" height="{{ div .Height 2 }}" alt="" loading="lazy">{{ end }}{{ end }}
+        <h3 class="proj-title">{{ if .url }}<a href="{{ .url }}" rel="noopener">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}</h3>
+        <p class="proj-desc">{{ .description }}</p>
+        {{ with .links }}<p class="proj-links">{{ range . }}<a href="{{ .url }}" rel="noopener">{{ .name }} &rarr;</a> {{ end }}</p>{{ end }}
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+
+  {{- $areas := site.Data.research_areas -}}
+  {{- $stop := slice "of" "and" "the" "for" "in" "on" "to" "a" "an" -}}
+  <section id="publications" class="home-section" aria-labelledby="pubs-h">
+    <span id="research-areas"></span>
+    <h2 id="pubs-h">Selected publications</h2>
+    {{ range $areas }}
+    {{- $a := . -}}
+    {{- $all := where site.RegularPages "Params.research_areas" "intersect" (slice $a.slug) -}}
+    <div class="feat-group">
+      <h3 class="feat-heading">{{ .title }}</h3>
+      <a class="feat-all" href="{{ "publication/" | relURL }}#all&area={{ .slug }}">View all {{ len $all }} &rarr;</a>
+    </div>
+    <ul class="feat-list">
+      {{ range first 3 .featured }}
+        {{ with site.GetPage (printf "/publication/%s" .) }}
+        {{- $cover := index site.Data.journal_covers (.Params.venue | default "") -}}
+        {{- $label := .Params.venue_short -}}
+        {{- if not $label -}}
+          {{- $src := .Params.venue | default .Title -}}
+          {{- $label = "" -}}
+          {{- range split $src " " }}{{ $w := . }}{{ if and (not (in $stop (lower $w))) (ge (len $w) 2) }}{{ $label = printf "%s%s" $label (upper (substr $w 0 1)) }}{{ end }}{{ end -}}
+          {{- $label = substr $label 0 5 -}}
+        {{- end -}}
+        <li><a class="feat-row" href="{{ .RelPermalink }}">
+          {{ with $cover }}{{ with resources.Get (printf "covers/%s" .file) }}<img class="feat-cover" src="{{ .RelPermalink }}" width="48" height="64" alt="" loading="lazy">{{ end }}{{ else }}<span class="feat-tile{{ if gt (len $label) 3 }} feat-tile-sm{{ end }}" aria-hidden="true">{{ $label }}</span>{{ end }}
+          <span class="feat-body">
+            <span class="feat-meta"><strong><em>{{ .Params.venue | default .Params.publication }}</em></strong>, {{ .Date.Year }}{{ with .Params.award }} <span class="badge">{{ . }}</span>{{ end }}</span>
+            <span class="feat-title">{{ .Title }}</span>
+          </span>
+        </a></li>
+        {{ end }}
+      {{ end }}
+    </ul>
+    {{ end }}
+    <p class="area-all"><a href="{{ "publication/" | relURL }}">All publications &rarr;</a></p>
   </section>
 </main>
 {{ end }}

@@ -1,14 +1,43 @@
 {{ define "main" }}
+{{- $tabs := site.Data.publication_tabs -}}
+{{- $areas := site.Data.research_areas -}}
+{{- $typeTab := dict -}}
+{{- range $tabs }}{{ $t := . }}{{ range .types }}{{ $typeTab = merge $typeTab (dict . $t.id) }}{{ end }}{{ end -}}
+{{- $pubs := .Pages.ByWeight -}}
 <main id="main" class="wrap publist" data-pagefind-body>
   <h1>{{ .Title }}</h1>
-  <ol class="cite-list">
-    {{ range .Pages.ByDate.Reverse }}
-    <li class="cite">
-      <p class="cite-venue">{{ with .Params.publication }}<em>{{ index (split . ",") 0 }}</em>, {{ end }}{{ .Date.Format "2006" }}</p>
-      <p class="cite-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></p>
-      <p class="cite-authors">{{ delimit .Params.authors ", " }}</p>
+
+  <nav class="pub-tabs" role="tablist" aria-label="Publication type" hidden>
+    <button type="button" class="tab-btn active" role="tab" aria-selected="true" data-tab="all">All <span class="count">{{ len $pubs }}</span></button>
+    {{ range $tabs }}
+    <button type="button" class="tab-btn" role="tab" aria-selected="false" data-tab="{{ .id }}">{{ .label }} <span class="count">0</span></button>
+    {{ end }}
+  </nav>
+
+  <nav class="pills" aria-label="Filter by topic" hidden>
+    <button type="button" class="pill active" data-area="" aria-pressed="true">All topics <span class="count">{{ len $pubs }}</span></button>
+    {{ range $areas }}<button type="button" class="pill" data-area="{{ .slug }}" aria-pressed="false">{{ .title }} <span class="count">0</span></button>{{ end }}
+  </nav>
+
+  <div class="pub-toolbar" hidden>
+    <input id="f-q" type="search" placeholder="Search title, author, venue, abstract" autocomplete="off" aria-label="Search publications">
+    <p class="result-count" id="result-count" aria-live="polite">{{ len $pubs }} of {{ len $pubs }} results</p>
+    <button type="button" class="act" id="f-bib">{{ partial "act-icon.html" "data" }}BibTeX</button>
+  </div>
+
+  <ol class="cite-list" id="cite-list">
+    {{ range $pubs }}
+    {{- $type := index .Params.publication_types 0 -}}
+    <li class="pub-item cite" data-tab="{{ index $typeTab $type }}" data-areas="{{ delimit (.Params.research_areas | default slice) " " }}"
+        data-type="{{ $type }}" data-year="{{ .Date.Year }}" data-key="{{ path.Base .File.Dir }}" data-title="{{ .Title }}"
+        data-authors="{{ delimit .Params.authors " and " }}" data-pub="{{ .Params.publication }}" data-venue="{{ .Params.venue }}" data-doi="{{ .Params.doi }}"
+        data-search="{{ lower (printf "%s %s %s %s" .Title (delimit .Params.authors " ") .Params.publication (.Params.abstract | default "")) }}">
+      {{ partial "citation.html" (dict "page" . "actions" true) }}
     </li>
     {{ end }}
   </ol>
+  <p class="no-results" id="no-results" hidden>No publications match these filters.</p>
 </main>
+{{ $js := resources.Get "js/publications.js" | resources.Minify | resources.Fingerprint "sha256" }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
 {{ end }}

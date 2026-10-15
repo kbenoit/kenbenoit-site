@@ -1,0 +1,18 @@
+# Projects on the home page, in order. A project with no url is shown without a link.
+# Phase 3 adds a page for each at /projects/<slug>/; point `url` there when it exists.
+- slug: ai-assisted-content-analysis
+  image: ai-assisted-content-analysis.png   # quallmer logo, supplied by the owner
+  title: AI-Assisted Content Analysis
+  description: A book under contract with Sage, building on the quallmer R package and research on using large language models to analyze political texts.
+  links:
+    - { name: quallmer, url: "https://quallmer.github.io/quallmer/" }
+- slug: quanteda
+  image: quanteda.png   # quanteda project logo, supplied by the owner
+  title: quanteda
+  description: The quanteda family of R packages for the quantitative analysis of textual data.
+  url: "https://quanteda.io"
+- slug: ppmd
+  image: ppmd.png   # cover of Party Policy in Modern Democracies (Routledge), supplied by the owner
+  title: Expert surveys (PPMD)
+  description: Expert survey estimates of the policy positions of political parties in 47 countries, collected with Michael Laver for Party Policy in Modern Democracies.
+  url: "https://www.tcd.ie/Political_Science/ppmd/"
