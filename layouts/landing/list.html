@@ -19,37 +19,43 @@
         {{ end }}
         <li><a class="social-link social-cv" href="{{ $o.cv | relURL }}" title="Download CV">CV</a></li>
       </ul>
-      <p class="hero-more"><a href="#research-areas">Research areas &darr;</a></p>
+      <p class="hero-more"><a href="#publications">Selected publications &darr;</a></p>
     </div>
   </section>
 
   {{- $areas := site.Data.research_areas -}}
-  <section id="research-areas" class="home-section" aria-labelledby="areas-h">
-    <h2 id="areas-h">Research areas</h2>
+  {{- $stop := slice "of" "and" "the" "for" "in" "on" "to" "a" "an" -}}
+  <section id="publications" class="home-section" aria-labelledby="pubs-h">
+    <span id="research-areas"></span>
+    <h2 id="pubs-h">Selected publications</h2>
     {{ range $areas }}
     {{- $a := . -}}
     {{- $all := where site.RegularPages "Params.research_areas" "intersect" (slice $a.slug) -}}
-    <details class="area">
-      <summary>{{ .title }} <span class="area-count">{{ len $all }}</span></summary>
-      <ul class="area-items">
-        {{ range .featured }}
-          {{ with site.GetPage (printf "/publication/%s" .) }}
-          <li>{{ partial "citation.html" (dict "page" . "actions" false) }}</li>
-          {{ end }}
+    <div class="feat-group">
+      <h3 class="feat-heading">{{ .title }}</h3>
+      <a class="feat-all" href="{{ "publication/" | relURL }}#all&area={{ .slug }}">View all {{ len $all }} &rarr;</a>
+    </div>
+    <ul class="feat-list">
+      {{ range first 3 .featured }}
+        {{ with site.GetPage (printf "/publication/%s" .) }}
+        {{- $label := .Params.venue_short -}}
+        {{- if not $label -}}
+          {{- $src := .Params.venue | default .Title -}}
+          {{- $label = "" -}}
+          {{- range split $src " " }}{{ $w := . }}{{ if and (not (in $stop (lower $w))) (ge (len $w) 2) }}{{ $label = printf "%s%s" $label (upper (substr $w 0 1)) }}{{ end }}{{ end -}}
+          {{- $label = substr $label 0 5 -}}
+        {{- end -}}
+        <li><a class="feat-row" href="{{ .RelPermalink }}">
+          <span class="feat-tile{{ if gt (len $label) 3 }} feat-tile-sm{{ end }}" aria-hidden="true">{{ $label }}</span>
+          <span class="feat-body">
+            <span class="feat-meta"><strong><em>{{ .Params.venue | default .Params.publication }}</em></strong>, {{ .Date.Year }}{{ with .Params.award }} <span class="badge">{{ . }}</span>{{ end }}</span>
+            <span class="feat-title">{{ .Title }}</span>
+          </span>
+        </a></li>
         {{ end }}
-      </ul>
-      <p class="area-all"><a href="{{ "publication/" | relURL }}#all&area={{ .slug }}">View all {{ len $all }} &rarr;</a></p>
-    </details>
-    {{ end }}
-  </section>
-
-  <section id="featured" class="home-section" aria-labelledby="feat-h">
-    <h2 id="feat-h">Selected publications</h2>
-    <ol class="cite-list">
-      {{ range sort (where site.RegularPages "Params.featured" true) "Params.featured_rank" }}
-      <li class="cite">{{ partial "citation.html" (dict "page" . "actions" false) }}</li>
       {{ end }}
-    </ol>
+    </ul>
+    {{ end }}
     <p class="area-all"><a href="{{ "publication/" | relURL }}">All publications &rarr;</a></p>
   </section>
 </main>

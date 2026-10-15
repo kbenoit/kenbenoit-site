@@ -163,7 +163,7 @@ Four projects, each with its own page at `/projects/<slug>/` (§8.2). Set the or
 
 ### 6.3 Research areas
 
-These are collapsible accordions, as mysite specifies. Each area shows 3–5 featured items and a "View all →" link to the publications list filtered to that area.
+Owner decision (15 October 2026): research areas and selected publications are one section, **Selected publications**, in the style of Stefan Müller's home page. Each area is a small uppercase heading with three featured items (a monogram tile, the venue in bold italics with the year, and the title as a link) and a "View all N →" link to the publications list filtered to that area. This replaces mysite's accordions and the separate six-item featured list in §6.4. The section keeps the anchor `#research-areas`.
 
 **Areas (decided), in this order:**
 
