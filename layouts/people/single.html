@@ -1,0 +1,23 @@
+{{ define "main" }}
+{{- $me := site.Params.owner.name -}}
+{{- $items := slice -}}
+{{- range where site.RegularPages "Section" "publication" }}{{ range .Params.authors }}
+  {{- if and (ne . $me) (ne . "et al.") }}
+    {{- $parts := split . " " -}}
+    {{- $key := lower (index $parts (sub (len $parts) 1)) | replace "ä" "a" | replace "ö" "o" | replace "ü" "u" | replace "é" "e" -}}
+    {{- $items = $items | append (dict "k" (printf "%s %s" $key (lower .)) "n" .) -}}
+  {{- end }}
+{{ end }}{{ end -}}
+{{- $seen := slice -}}
+<main id="main" class="wrap page" data-pagefind-body>
+  <h1>{{ .Title }}</h1>
+  <div class="prose page-body-text">
+    {{ .Content }}
+    <h2>Co-authors</h2>
+    <ul class="coauthors">
+      {{ range sort $items "k" }}{{ if not (in $seen .n) }}{{ $seen = $seen | append .n }}<li>{{ .n }}</li>{{ end }}{{ end }}
+    </ul>
+    <p>More co-authors appear on the <a href="{{ site.Params.owner.scholar }}">Google Scholar profile</a>.</p>
+  </div>
+</main>
+{{ end }}

@@ -1,18 +1,41 @@
-# Projects on the home page, in order. A project with no url is shown without a link.
-# Phase 3 adds a page for each at /projects/<slug>/; point `url` there when it exists.
+# Projects, in order. `home: true` shows the project on the home page. Each has a page at /projects/<slug>/.
 - slug: ai-assisted-content-analysis
-  image: ai-assisted-content-analysis.png   # quallmer logo, supplied by the owner
+  home: true
   title: AI-Assisted Content Analysis
+  image: ai-assisted-content-analysis.png   # quallmer logo, supplied by the owner
   description: A book under contract with Sage, building on the quallmer R package and research on using large language models to analyze political texts.
   links:
     - { name: quallmer, url: "https://quallmer.github.io/quallmer/" }
+  # Home page card only: a different description, and no separate quallmer link button.
+  home_description: A book under contract with Sage, building on the quallmer R package and research on using large language models to analyze political texts. The [quallmer](https://quallmer.github.io/quallmer/) R package development is part of this project.
+  home_links: []
 - slug: quanteda
-  image: quanteda.png   # quanteda project logo, supplied by the owner
+  home: true
   title: quanteda
+  image: quanteda.png   # quanteda project logo, supplied by the owner
   description: The quanteda family of R packages for the quantitative analysis of textual data.
-  url: "https://quanteda.io"
+  # Home page card only:
+  home_description: The quanteda family of R packages for the quantitative analysis of textual data, including [spacyr](https://spacyr.quanteda.io), [readtext](https://readtext.quanteda.io), [quanteda.textstats](https://github.com/quanteda/quanteda.textstats), [quanteda.textmodels](https://github.com/quanteda/quanteda.textmodels), [quanteda.textplots](https://github.com/quanteda/quanteda.textplots) and [quanteda.tidy](https://github.com/quanteda/quanteda.tidy).
+  links:
+    - { name: quanteda.io, url: "https://quanteda.io" }
 - slug: ppmd
-  image: ppmd.png   # cover of Party Policy in Modern Democracies (Routledge), supplied by the owner
+  home: true
   title: Expert surveys (PPMD)
+  image: ppmd.png   # cover of Party Policy in Modern Democracies (Routledge), supplied by the owner
   description: Expert survey estimates of the policy positions of political parties in 47 countries, collected with Michael Laver for Party Policy in Modern Democracies.
-  url: "https://www.tcd.ie/Political_Science/ppmd/"
+  # Home page card only:
+  home_description: Expert survey estimates of the policy positions of political parties in 47 countries, collected with Michael Laver for *Party Policy in Modern Democracies*.
+  links:
+    - { name: Data and book website, url: "https://www.tcd.ie/Political_Science/ppmd/" }
+- slug: quallmer
+  home: false
+  title: quallmer
+  image: quallmer.png
+  description: An R package for qualitative analysis with large language models, with Seraphine F. Maerz.
+  links:
+    - { name: Package website, url: "https://quallmer.github.io/quallmer/" }
+    - { name: CRAN, url: "https://cran.r-project.org/package=quallmer" }
+- slug: llm-research
+  home: false
+  title: LLM research
+  description: Research on using large language models to analyze political texts.

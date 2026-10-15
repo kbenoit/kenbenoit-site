@@ -19,21 +19,13 @@
         {{ end }}
         <li><a class="social-link social-cv" href="{{ $o.cv | relURL }}" title="Download CV">CV</a></li>
       </ul>
-      <p class="hero-more"><a href="#publications">Selected publications &darr;</a></p>
     </div>
   </section>
 
   <section id="projects" class="home-section" aria-labelledby="proj-h">
     <h2 id="proj-h">Projects</h2>
     <ul class="proj-grid">
-      {{ range site.Data.projects }}
-      <li class="proj">
-        {{ with .image }}{{ with resources.Get (printf "projects/%s" .) }}<img class="proj-img" src="{{ .RelPermalink }}" width="{{ div .Width 2 }}" height="{{ div .Height 2 }}" alt="" loading="lazy">{{ end }}{{ end }}
-        <h3 class="proj-title">{{ if .url }}<a href="{{ .url }}" rel="noopener">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}</h3>
-        <p class="proj-desc">{{ .description }}</p>
-        {{ with .links }}<p class="proj-links">{{ range . }}<a href="{{ .url }}" rel="noopener">{{ .name }} &rarr;</a> {{ end }}</p>{{ end }}
-      </li>
-      {{ end }}
+      {{ range where site.Data.projects "home" true }}{{ partial "project-card.html" (dict "p" . "home" true) }}{{ end }}
     </ul>
   </section>
 

@@ -1,0 +1,16 @@
+{{ define "main" }}
+<main id="main" class="wrap page" data-pagefind-body>
+  <h1>{{ .Title }}</h1>
+  {{ with .Params.sections }}
+  <nav class="page-sections" aria-label="On this page">
+    {{ range . }}<a href="#{{ . | anchorize }}">{{ . }}</a>{{ end }}
+  </nav>
+  {{ end }}
+  <div class="prose page-body-text">
+    {{ if .Params.portrait }}{{ with resources.Get site.Params.owner.photo }}{{ $img := .Resize "300x300 jpg q85" }}
+    <img class="bio-portrait" src="{{ $img.RelPermalink }}" width="150" height="150" alt="{{ site.Params.owner.photo_alt }}">
+    {{ end }}{{ end }}
+    {{ .Content }}
+  </div>
+</main>
+{{ end }}
