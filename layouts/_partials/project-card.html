@@ -4,7 +4,8 @@
 {{- with .p -}}
 <li class="proj">
   {{ with .image }}{{ with resources.Get (printf "projects/%s" .) }}<img class="proj-img" src="{{ .RelPermalink }}" width="{{ div .Width 2 }}" height="{{ div .Height 2 }}" alt="" loading="lazy">{{ end }}{{ end }}
-  <{{ $h }} class="proj-title"><a href="{{ printf "projects/%s/" .slug | relURL }}">{{ .title }}</a></{{ $h }}>
+  {{- $href := printf "projects/%s/" .slug | relURL }}
+  {{ if eq $h "h2" }}<h2 class="proj-title"><a href="{{ $href }}">{{ .title }}</a></h2>{{ else }}<h3 class="proj-title"><a href="{{ $href }}">{{ .title }}</a></h3>{{ end }}
   {{- $desc := .description -}}{{- if and $home .home_description }}{{ $desc = .home_description }}{{ end }}
   <p class="proj-desc">{{ $desc | markdownify }}</p>
   {{ $links := .links }}{{ if and $home (isset . "home_links") }}{{ $links = .home_links }}{{ end }}

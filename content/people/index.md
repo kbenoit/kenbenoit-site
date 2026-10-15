@@ -3,10 +3,6 @@ title: "People"
 type: people
 ---
 
-## Current post-doc
-
-*   Jinshuai Ma
-
 ## PhD alumni
 
 *   [Alexander Baturo](https://www.dcu.ie/lawandgovernment/people/alex-baturo) (TCD, 2008), Dublin City University
@@ -36,6 +32,7 @@ type: people
 
 ## Post-doc alumni
 
+*   Jinshuai Ma
 *   Marina McGale, Australian National University
 *   [William Lowe](https://conjugateprior.org), Hertie School
 *   [Paul Nulty](https://github.com/pnulty), University College Dublin

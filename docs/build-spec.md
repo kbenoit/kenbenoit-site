@@ -99,7 +99,7 @@ Brand on the left, links on the right, search icon (mysite navbar rules apply):
 | Publications | `/publication/` | Filterable list (§7), plus `/publication/<slug>/` for each item |
 | Projects | `/projects/` | Four project pages, plus an "Other software" list (§8.2). Replaces the old `/software/` page. |
 | Teaching | `/teaching/` | From the CV teaching section, plus links to course pages in the blog archive |
-| People | `/people/` | Current post-doc, PhD alumni, post-doc alumni, then co-authors (§8.3) |
+| People | `/people/` | PhD alumni, post-doc alumni, then co-authors (§8.3) |
 | Blog (archive) | `/posts/` (keep the existing path) | 58 posts with their original URLs (§8.4). Owner decision (15 October 2026): not in the menu and not in site search, but every URL stays live. |
 
 ---
@@ -286,10 +286,9 @@ The `/projects/` list page shows five projects as cards (the three on the home p
 
 **Override of mysite.** The People page must exist, but don't build it purely from co-authors.
 
-1. **Current post-doc:** Jinshuai Ma
-2. **PhD alumni:** from `content/associates/associates.md`, keeping its links and affiliations, which were checked in October 2026
-3. **Post-doc alumni:** from the same file
-4. **Co-authors:** generated automatically from publication `authors:` lists, as mysite describes. Show names only, with no guessed links.
+1. **PhD alumni:** from `content/associates/associates.md`, keeping its links and affiliations, which were checked in October 2026
+2. **Post-doc alumni:** from the same file, with Jinshuai Ma added (he is no longer a current post-doc; owner decision, 15 October 2026)
+3. **Co-authors:** generated automatically from publication `authors:` lists, as mysite describes. Show names only, with no guessed links.
 
 The agent must **not** add guessed links for co-authors without showing the owner a list to approve.
 
