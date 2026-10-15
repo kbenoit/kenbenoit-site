@@ -3,6 +3,10 @@ title: "Kenneth Benoit"
 languageCode: en-us
 enableRobotsTXT: true
 
+security:
+  exec:
+    allow: ['^(dart-)?sass$', '^go$', '^git$', '^node$', '^postcss$', '^npx$', '^tailwindcss$']
+
 module:
   imports:
     - path: github.com/HugoBlox/hugo-blox-builder/modules/blox-tailwind
