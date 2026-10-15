@@ -51,6 +51,7 @@
     <ul class="feat-list">
       {{ range first 3 .featured }}
         {{ with site.GetPage (printf "/publication/%s" .) }}
+        {{- $cover := index site.Data.journal_covers (.Params.venue | default "") -}}
         {{- $label := .Params.venue_short -}}
         {{- if not $label -}}
           {{- $src := .Params.venue | default .Title -}}
@@ -59,7 +60,7 @@
           {{- $label = substr $label 0 5 -}}
         {{- end -}}
         <li><a class="feat-row" href="{{ .RelPermalink }}">
-          <span class="feat-tile{{ if gt (len $label) 3 }} feat-tile-sm{{ end }}" aria-hidden="true">{{ $label }}</span>
+          {{ with $cover }}{{ with resources.Get (printf "covers/%s" .file) }}<img class="feat-cover" src="{{ .RelPermalink }}" width="48" height="64" alt="" loading="lazy">{{ end }}{{ else }}<span class="feat-tile{{ if gt (len $label) 3 }} feat-tile-sm{{ end }}" aria-hidden="true">{{ $label }}</span>{{ end }}
           <span class="feat-body">
             <span class="feat-meta"><strong><em>{{ .Params.venue | default .Params.publication }}</em></strong>, {{ .Date.Year }}{{ with .Params.award }} <span class="badge">{{ . }}</span>{{ end }}</span>
             <span class="feat-title">{{ .Title }}</span>

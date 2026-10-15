@@ -243,10 +243,10 @@ Modelled on Stefan Müller's list (owner decision, 15 October 2026), replacing m
 
 ### 7.4 Cover images
 
-**Override of mysite.** Do not scrape journal cover images.
-
-- Use **book covers only** (*Party Policy in Modern Democracies*; *Intra-Party Politics and Coalition Governments*).
-- Use the publisher's image, credited in the page's front matter.
+Owner decision (15 October 2026), replacing the original book-covers-only rule:
+- The home page's Selected publications show a small portrait thumbnail (48×64px, cropped from the top) for each journal, as on Stefan Müller's site. Covers are the publishers' own images, stored in `assets/covers/` and mapped by venue in `data/journal_covers.yaml` with the publisher credited.
+- A journal with no usable cover (or only a "cover not available" placeholder) gets a monogram tile of the same size. Delete a mapping to fall back to the monogram.
+- Book covers for the two books are still to be added from the publisher, credited in the page's front matter.
 
 ---
 
