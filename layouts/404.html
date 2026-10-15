@@ -1,0 +1,12 @@
+{{ define "main" }}
+<main id="main" class="wrap page" data-pagefind-ignore>
+  <h1>Page not found</h1>
+  <p>That address doesn't exist on this site. Try one of these, or search.</p>
+  <ul class="actions">
+    <li><a class="btn" href="{{ site.Home.RelPermalink }}">Home</a></li>
+    <li><a class="btn" href="{{ "publication/" | relURL }}">Publications</a></li>
+    <li><a class="btn" href="{{ "projects/" | relURL }}">Projects</a></li>
+    <li><button type="button" class="btn" data-search-toggle>Search the site</button></li>
+  </ul>
+</main>
+{{ end }}

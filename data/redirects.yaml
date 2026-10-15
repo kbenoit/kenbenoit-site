@@ -1,0 +1,25 @@
+# Old kenbenoit.net pages that moved in the redesign. Each becomes a 301 in the generated _redirects file.
+# Add a line here to redirect any other old address. Keep `to` on this site.
+- { from: /cv/,                        to: /bio/ }
+- { from: /cvs/,                       to: /bio/ }
+- { from: /cvs/page/1/,                to: /bio/ }
+- { from: /cvs/qualifications/,        to: "/bio/#positions" }
+- { from: /cvs/service/,               to: "/bio/#service" }
+- { from: /cvs/grants-and-awards/,     to: "/bio/#grants" }
+- { from: /cvs/teaching/,              to: /teaching/ }
+- { from: /cvs/publications/,          to: /publication/ }
+- { from: /cvs/conferences/,           to: /bio/ }
+- { from: /associates/,                to: /people/ }
+- { from: /authors/,                   to: /people/ }
+- { from: /authors/page/1/,            to: /people/ }
+- { from: /author/ken-benoit/,         to: /bio/ }
+- { from: /current/,                   to: "/#research-areas" }
+- { from: /software/,                  to: /projects/ }
+- { from: /post/,                      to: /posts/ }
+- { from: /post/page/1/,               to: /posts/ }
+- { from: /categories/page/1/,         to: /categories/ }
+- { from: /tags/page/1/,               to: /tags/ }
+- { from: /publication_types/page/1/,  to: /publication_types/ }
+# Page 1 of a category or tag list was a separate address on the old site.
+- { from: "/category/:name/page/1/",    to: "/category/:name/" }
+- { from: "/tag/:name/page/1/",         to: "/tag/:name/" }

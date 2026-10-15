@@ -1,9 +1,10 @@
 {{- /* Input: dict "p" <project from data/projects.yaml> "home" <bool> */ -}}
 {{- $home := .home -}}
+{{- $h := .heading | default "h3" -}}
 {{- with .p -}}
 <li class="proj">
   {{ with .image }}{{ with resources.Get (printf "projects/%s" .) }}<img class="proj-img" src="{{ .RelPermalink }}" width="{{ div .Width 2 }}" height="{{ div .Height 2 }}" alt="" loading="lazy">{{ end }}{{ end }}
-  <h3 class="proj-title"><a href="{{ printf "projects/%s/" .slug | relURL }}">{{ .title }}</a></h3>
+  <{{ $h }} class="proj-title"><a href="{{ printf "projects/%s/" .slug | relURL }}">{{ .title }}</a></{{ $h }}>
   {{- $desc := .description -}}{{- if and $home .home_description }}{{ $desc = .home_description }}{{ end }}
   <p class="proj-desc">{{ $desc | markdownify }}</p>
   {{ $links := .links }}{{ if and $home (isset . "home_links") }}{{ $links = .home_links }}{{ end }}

@@ -1,0 +1,39 @@
+name: Site checks
+
+# Builds the site on every pull request and runs the legacy URL check and the
+# search/AI-visibility check against the build. See _automation/README.md.
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.160.1
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.22"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install Hugo (extended, pinned)
+        run: |
+          wget -q -O "${{ runner.temp }}/hugo.deb" "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb"
+          sudo dpkg -i "${{ runner.temp }}/hugo.deb"
+      - run: npm ci
+      - run: hugo --gc --minify
+      - run: npx pagefind --site public
+      - name: Legacy URL check
+        run: python3 _automation/check_legacy_urls.py --dir public --report legacy-url-report.md | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Search and AI-visibility check
+        run: python3 _automation/check_ai_visibility.py --dir public --report ai-visibility-report.md | tee -a "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: check-reports
+          path: |
+            legacy-url-report.md
+            ai-visibility-report.md

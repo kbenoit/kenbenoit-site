@@ -12,7 +12,23 @@ module:
     - path: github.com/HugoBlox/hugo-blox-builder/modules/blox-tailwind
 
 outputs:
-  home: [HTML, RSS]
+  home: [HTML, RSS, REDIRECTS, LLMS]
+
+mediaTypes:
+  text/netlify:
+    delimiter: ""
+
+outputFormats:
+  LLMS:
+    mediaType: text/plain
+    baseName: llms
+    isPlainText: true
+    notAlternative: true
+  REDIRECTS:
+    mediaType: text/netlify
+    baseName: _redirects
+    isPlainText: true
+    notAlternative: true
 
 taxonomies:
   tag: tags
