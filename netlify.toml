@@ -1,0 +1,25 @@
+[build]
+  command = "npm ci && hugo --gc --minify && npx pagefind --site public"
+  publish = "public"
+
+[build.environment]
+  HUGO_VERSION = "0.160.1"
+  NODE_VERSION = "22"
+  GO_VERSION = "1.22.5"
+
+[context.production.environment]
+  HUGO_ENV = "production"
+
+[[headers]]
+  for = "*.webmanifest"
+  [headers.values]
+    Content-Type = "application/manifest+json; charset=UTF-8"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"

@@ -1,0 +1,16 @@
+{
+  "name": "kenbenoit-site",
+  "private": true,
+  "description": "Build tooling for kenbenoit.net (Tailwind for Hugo Blox, Pagefind search index).",
+  "scripts": {
+    "build": "hugo --gc --minify && pagefind --site public",
+    "dev": "hugo server"
+  },
+  "devDependencies": {
+    "@fontsource/atkinson-hyperlegible": "^5.2.0",
+    "@tailwindcss/cli": "^4.1.0",
+    "@tailwindcss/typography": "^0.5.20",
+    "pagefind": "^1.5.0",
+    "tailwindcss": "^4.1.0"
+  }
+}
