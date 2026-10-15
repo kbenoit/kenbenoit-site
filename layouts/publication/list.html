@@ -1,0 +1,14 @@
+{{ define "main" }}
+<main id="main" class="wrap publist" data-pagefind-body>
+  <h1>{{ .Title }}</h1>
+  <ol class="cite-list">
+    {{ range .Pages.ByDate.Reverse }}
+    <li class="cite">
+      <p class="cite-venue">{{ with .Params.publication }}<em>{{ index (split . ",") 0 }}</em>, {{ end }}{{ .Date.Format "2006" }}</p>
+      <p class="cite-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></p>
+      <p class="cite-authors">{{ delimit .Params.authors ", " }}</p>
+    </li>
+    {{ end }}
+  </ol>
+</main>
+{{ end }}

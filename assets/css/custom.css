@@ -138,6 +138,18 @@ a:hover { color: var(--color-link-hover-text); }
 .pub-abstract h2 { margin: 0 0 0.5rem; font-size: 1.15rem; }
 .prose p { margin-bottom: 1.25em; }
 
+/* ---- Publications list: dense citation rows ---- */
+.publist { padding-top: 2.5rem; padding-bottom: 3rem; max-width: 900px; }
+.publist h1 { margin: 0 0 1.25rem; font-size: 1.5rem; }
+.cite-list { list-style: none; margin: 0; padding: 0; }
+.cite { padding: 0.7rem 0; border-bottom: 1px solid var(--color-border); }
+.cite p { margin: 0; }
+.cite-venue { font-size: 0.82rem; color: var(--color-text-muted); }
+.cite-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.cite-title a { text-decoration: none; }
+.cite-title a:hover { text-decoration: underline; }
+.cite-authors { font-size: 0.88rem; color: var(--color-text-muted); }
+
 /* ---- Footer ---- */
 .site-footer { margin-top: 4rem; padding: 1.5rem 0 2rem; border-top: 1px solid var(--color-border); font-size: 0.85rem; color: var(--color-text-muted); }
 .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 2rem; }
