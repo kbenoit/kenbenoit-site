@@ -173,8 +173,8 @@ Owner decision (15 October 2026): research areas and selected publications are o
 | 3 | **Measuring party positions** (`measuring-positions`) | Expert surveys vs. hand coding (ES 2007), *Party Policy in Modern Democracies* (2006), Treating Words as Data with Error (AJPS 2009), coder reliability (PA 2012), scaling coded texts (LSQ 2011), Latin America (JOP 2009), Japan (JJPS 2005), dimensionality (EUP 2012), scaling hand-coded texts (PP 2022), Benchmarks, "Compared to What?", the open-access document archive (GP 2009) |
 | 4 | **Party competition** (`party-competition`) | Including the European Parliament and legislatures: EP party groups (BJPS 2010, PP 2007, EUP 2012), Basic Arithmetic (AJPS 2015), evolution of party systems (AJPS 2003), intra-party preferences (PSRM 2017), speaker selection (JOP 2015), France 2002 (EJPR 2006), Irish policy space (ESR 2005), Irish parties and Europe (IPS 2009), *Intra-Party Politics and Coalition Governments* (2008), the EU Convention (EUP 2005) |
 | 5 | **Electoral systems** (`electoral-systems`) | Electoral Laws as Political Consequences (ARPS 2007), Models of Electoral System Change (ES 2004), Duverger (FP 2006, ES 2002), district magnitude (EJPR 2001), most proportional formula (PA 2000), voter strategies (BJPS 2006) |
-| 6 | **Post-communist politics** (`hungary-postcommunist`; renamed from "Hungary and post-communist politics" by the owner, 15 October 2026; the slug is unchanged so links keep working) | Hungary's 1989 electoral law (JTP 2001), Hungary's two-vote system (1996), Hungarian elections 2002 (JCSTP), Hungarian chapters and forecasts, Poland (JOP 2004) |
-| 7 | **Campaign spending** (`campaign-spending`) | The Campaign Value of Incumbency (AJPS 2008), PRQ 2010, *Party Politics* 2003, IPS 2003 |
+| 6 | **Campaign spending** (`campaign-spending`) | The Campaign Value of Incumbency (AJPS 2008), PRQ 2010, *Party Politics* 2003, IPS 2003 |
+| 7 | **Post-communist politics** (`hungary-postcommunist`; renamed from "Hungary and post-communist politics" by the owner, 15 October 2026; the slug is unchanged so links keep working) | Hungary's 1989 electoral law (JTP 2001), Hungary's two-vote system (1996), Hungarian elections 2002 (JCSTP), Hungarian chapters and forecasts, Poland (JOP 2004) |
 
 - **Many items carry two tags,** e.g. Wordscores is both `text-as-data` and `measuring-positions`. List the slugs in `data/research_areas.json`.
 - **Some items fit no area** (for example the democratic-peace paper, JCR 1996, and the impact-ranking paper). Leave them untagged; they still appear in the full list.
@@ -396,7 +396,7 @@ Rollback means pointing the domain back to the old Netlify site.
 
 | # | Decision | Outcome |
 |---|---|---|
-| 1 | Research areas | Seven areas, in the order in §6.3 |
+| 1 | Research areas | Seven areas, in the order in §6.3 (campaign spending moved ahead of post-communist politics, 15 October 2026) |
 | 2 | Spotlight | A Projects section (§6.2): LLM research featured, then quallmer, quanteda and Party Policy in Modern Democracies. A Projects page replaces Software (§8.2). |
 | 3 | Featured publications | The six in §6.4 |
 | 4 | Photo shape | Rounded square, about 200px |
