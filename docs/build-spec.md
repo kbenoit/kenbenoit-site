@@ -1,6 +1,6 @@
 # kenbenoit.net Rebuild: Build Specification
 
-**Status:** Draft v0.1, 15 October 2026. For review by Kenneth Benoit before any build work starts.
+**Status:** v0.2, 15 October 2026. Owner decisions in §14 are settled; ready for Phase 1.
 **Owner:** Kenneth Benoit
 **Build agent:** Claude Code (or another coding agent), working in a new repository
 
@@ -19,7 +19,7 @@ The live site at `kenbenoit.net` (repo `kbenoit/kbenoit-hugo-site`, Hugo 0.110 +
 
 ## 1. Goals
 
-1. **Structure like <https://brandonstewart.org>:** a name-first hero, a featured spotlight, featured publications, a dense filterable publications page with one page per item, and Bio / Teaching / Software / People pages.
+1. **Structure like <https://brandonstewart.org>:** a name-first hero, a projects section, featured publications, a dense filterable publications page with one page per item, and Bio / Projects / Teaching / People pages.
 2. **Look like <https://muellerstefan.net>:** crisp system typography, near-black text on white, light grey panels, and one deep-blue accent (exact values in §5).
 3. **Keep multiple pages.** Do not adopt Stefan's single-page layout.
 4. **Preserve every existing URL** (§9). Nothing that is cited, bookmarked or indexed today may return 404.
@@ -85,7 +85,7 @@ The live site at `kenbenoit.net` (repo `kbenoit/kbenoit-hugo-site`, Hugo 0.110 +
 
 Brand on the left, links on the right, search icon (mysite navbar rules apply):
 
-`KENNETH BENOIT` · Bio · Publications · Software · Teaching · People · Blog · CV · 🔍
+`KENNETH BENOIT` · Bio · Projects · Publications · Teaching · People · Blog · CV · 🔍
 
 - **CV** links straight to `/pdfs/KenBenoitCV.pdf`, as on Stefan's site.
 - **Research Areas** isn't a separate page; it is a section of the home page, linked as `/#research-areas` from the hero.
@@ -94,10 +94,10 @@ Brand on the left, links on the right, search icon (mysite navbar rules apply):
 
 | Page | URL | Content |
 |---|---|---|
-| Home | `/` | Hero (§6.1), project spotlight (§6.2), research areas (§6.3), featured publications (§6.4) |
+| Home | `/` | Hero (§6.1), projects (§6.2), research areas (§6.3), featured publications (§6.4) |
 | Bio | `/bio/` | Full bio, academic positions, education, service, grants and awards (merging the old `/cv/` sub-pages) |
 | Publications | `/publication/` | Filterable list (§7), plus `/publication/<slug>/` for each item |
-| Software | `/software/` | One card per package (§8.2) |
+| Projects | `/projects/` | Four project pages, plus an "Other software" list (§8.2). Replaces the old `/software/` page. |
 | Teaching | `/teaching/` | From the CV teaching section, plus links to course pages in the blog archive |
 | People | `/people/` | Current post-doc, PhD alumni, post-doc alumni, then co-authors (§8.3) |
 | Blog | `/posts/` (keep the existing path) | 58 posts with their original URLs (§8.4) |
@@ -120,7 +120,6 @@ Brand on the left, links on the right, search icon (mysite navbar rules apply):
   --color-link-hover: #43961c;   /* green hover, as on Stefan's site */
   --color-accent-2: #516c5b;
   --color-accent-bright: #3b86c8;
-  --color-institution: TBD;      /* SMU brand colour; look up the official value. Use sparingly or omit (decision 5, §14). */
   --shadow-soft: 0 16px 40px rgba(45, 41, 38, 0.08);
   --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-hyperlegible: "Atkinson Hyperlegible", var(--font-sans);
@@ -134,6 +133,7 @@ Brand on the left, links on the right, search icon (mysite navbar rules apply):
 - **Buttons:** one style, either solid accent or accent outline, used consistently.
 - **Light mode only:** force light mode as mysite requires.
 - **Accessibility:** all text must meet WCAG AA contrast. Check the muted colour on the surface colour.
+- **No institutional colour.** Don't use SMU's brand colours: the site should outlast any one appointment. The SMU name and link in the hero are enough.
 
 ---
 
@@ -141,7 +141,7 @@ Brand on the left, links on the right, search icon (mysite navbar rules apply):
 
 ### 6.1 Hero
 
-- **Layout:** photo on the left (rounded square or circle, about 200px), with text on the right.
+- **Layout:** photo on the left, as a **rounded square** (about 200px, modest corner radius, as on Stefan's site; not a circle, which would crop the shoulders of the headshot), with text on the right.
 - **Text, in order:**
   1. An eyebrow line with the institution, `SINGAPORE MANAGEMENT UNIVERSITY`
   2. The name, as the `h1`
@@ -150,41 +150,50 @@ Brand on the left, links on the right, search icon (mysite navbar rules apply):
 - **Buttons, all in one style:** Download CV · Email · Google Scholar · GitHub
 - **Mobile:** the photo stacks above the text.
 
-### 6.2 Project spotlight (like Brandon's featured book)
+### 6.2 Projects (one featured, three cards)
 
-- One featured item at a time, set in `data/spotlight.yaml` so it's easy to swap.
-- **Default:** the LLM research programme. Lead with the AJPS 2026 paper, "Using Large Language Models to Analyze Political Texts Through Natural Language Understanding", plus West European Politics 2026 and the quallmer package.
-- **Alternate:** quanteda, if the owner prefers.
+Four projects, each with its own page at `/projects/<slug>/` (§8.2). Set the order and the featured project in `data/projects.yaml`, so they're easy to change.
+
+- **Featured, full-width band** (like Brandon's featured book): **LLM research**. Lead with the AJPS 2026 paper, "Using Large Language Models to Analyze Political Texts Through Natural Language Understanding", plus West European Politics 2026 ("Measuring issue salience for political parties using LLMs").
+- **Then a row of three cards:**
+  1. **quallmer:** R package for qualitative analysis with LLMs (with Seraphine F. Maerz)
+  2. **quanteda:** the quanteda family of R packages for text analysis
+  3. **Party Policy in Modern Democracies:** the 2006 expert survey project and book (with Michael Laver)
+- **Each card shows** a title, one-sentence description, an image if available, and a "More →" link to the project page.
 
 ### 6.3 Research areas
 
 These are collapsible accordions, as mysite specifies. Each area shows 3–5 featured items and a "View all →" link to the publications list filtered to that area.
 
-**Proposed areas (owner to confirm or rename):**
+**Areas (decided), in this order:**
 
-1. **Large language models and political text:** AJPS 2026, WEP 2026, quallmer, LSE Public Policy Review 2024, Asian Management Insights 2025
-2. **Text as data: measurement and scaling:** Wordscores (APSR 2003), crowd-sourcing (APSR 2016), Treating Words as Data with Error (AJPS 2009), textual complexity (AJPS 2019), Lowe et al. (LSQ 2011), validating latent traits (PA 2013)
-3. **Party competition and policy positions:** *Party Policy in Modern Democracies*, expert surveys, the European Parliament, dimensionality (EUP 2012), the Basic Arithmetic of legislative decisions (AJPS 2015)
-4. **Electoral systems and institutions:** Electoral Laws as Political Consequences (ARPS 2007), Models of Electoral System Change, Duverger, Hungary, Poland
-5. **Campaign spending and elections:** Benoit & Marsh, AJPS 2008, PRQ 2010, Party Politics 2003
-6. **Open-source software for text analysis:** quanteda (JOSS 2018), tokenizers, readtext, spacyr, quallmer
+| # | Area (slug) | Core items |
+|---|---|---|
+| 1 | **LLMs and AI** (`llms-ai`) | AJPS 2026, WEP 2026, quallmer, *LSE Public Policy Review* 2024, *Asian Management Insights* 2025 |
+| 2 | **Text as data** (`text-as-data`) | Wordscores (APSR 2003), crowd-sourcing (APSR 2016), sophistication (AJPS 2019), validating latent traits (PA 2013), natural sentences (BJPS 2012), social media in the 2014 EP elections (ES 2016), Brexit Twitter (SPP 2017), quanteda (JOSS 2018), tokenizers (JOSS 2018), "Text analysis in R" (CMM 2017), Wordscoring Irish speeches and positions (IPS 2002, 2003) |
+| 3 | **Measuring party positions** (`measuring-positions`) | Expert surveys vs. hand coding (ES 2007), *Party Policy in Modern Democracies* (2006), Treating Words as Data with Error (AJPS 2009), coder reliability (PA 2012), scaling coded texts (LSQ 2011), Latin America (JOP 2009), Japan (JJPS 2005), dimensionality (EUP 2012), scaling hand-coded texts (PP 2022), Benchmarks, "Compared to What?", the open-access document archive (GP 2009) |
+| 4 | **Party competition** (`party-competition`) | Including the European Parliament and legislatures: EP party groups (BJPS 2010, PP 2007, EUP 2012), Basic Arithmetic (AJPS 2015), evolution of party systems (AJPS 2003), intra-party preferences (PSRM 2017), speaker selection (JOP 2015), France 2002 (EJPR 2006), Irish policy space (ESR 2005), Irish parties and Europe (IPS 2009), *Intra-Party Politics and Coalition Governments* (2008), the EU Convention (EUP 2005) |
+| 5 | **Electoral systems** (`electoral-systems`) | Electoral Laws as Political Consequences (ARPS 2007), Models of Electoral System Change (ES 2004), Duverger (FP 2006, ES 2002), district magnitude (EJPR 2001), most proportional formula (PA 2000), voter strategies (BJPS 2006) |
+| 6 | **Hungary and post-communist politics** (`hungary-postcommunist`) | Hungary's 1989 electoral law (JTP 2001), Hungary's two-vote system (1996), Hungarian elections 2002 (JCSTP), Hungarian chapters and forecasts, Poland (JOP 2004) |
+| 7 | **Campaign spending** (`campaign-spending`) | The Campaign Value of Incumbency (AJPS 2008), PRQ 2010, *Party Politics* 2003, IPS 2003 |
 
-Tag each publication with one or more area slugs listed in `data/research_areas.json`.
+- **Many items carry two tags,** e.g. Wordscores is both `text-as-data` and `measuring-positions`. List the slugs in `data/research_areas.json`.
+- **Some items fit no area** (for example the democratic-peace paper, JCR 1996, and the impact-ranking paper). Leave them untagged; they still appear in the full list.
+- **The agent proposes tags for every item,** and the owner spot-checks them in Phase 2.
 
 ### 6.4 Featured publications
 
-- **Six to eight items,** set by `featured: true` in front matter.
+- **Six items (decided),** set by `featured: true` in front matter, shown in this order.
 - **Each shows:** venue, year, an award badge where applicable, title and authors.
 
-**Suggested items:**
-- AJPS 2026 (LLMs)
-- APSR 2016 (crowd-sourcing)
-- AJPS 2019 (sophistication)
-- JOSS 2018 (quanteda)
-- APSR 2003 (Wordscores)
-- AJPS 2009 (words as data with error)
-- JOP 2009 (Gulbenkian Prize)
-- ARPS 2007
+1. AJPS 2026: Using Large Language Models to Analyze Political Texts Through Natural Language Understanding
+2. WEP 2026: Measuring issue salience for political parties using LLMs
+3. APSR 2003: Extracting Policy Positions from Political Texts Using Words as Data
+4. LSQ 2011: Scaling Policy Preferences From Coded Political Texts
+5. ES 2007: Estimating party policy positions: Comparing expert surveys and hand-coded content analysis
+6. APSR 2016: Crowd-Sourced Text Analysis: Reproducible and Agile Production of Political Data
+
+quanteda (JOSS 2018) is not featured here because the quanteda project card already highlights it.
 
 ---
 
@@ -263,14 +272,23 @@ Put them under headings: Positions · Education · Service · Grants · Awards.
 
 **Do not** bring back the Conferences and Presentations page. It is archived on purpose (`archive/conferences.md` in the old repo).
 
-### 8.2 Software
+### 8.2 Projects
 
-Cards, each with a description, links (site · GitHub · CRAN) and its related paper:
-- **quanteda,** with its companion packages quanteda.textmodels, .textstats and .textplots: <https://quanteda.io>
-- **readtext:** <https://readtext.quanteda.io>
-- **spacyr:** <https://spacyr.quanteda.io>
-- **quallmer** (with Seraphine F. Maerz): <https://quallmer.github.io/quallmer/>
-- **Legacy:** Wordscores (Stata, no longer hosted) and EzI (<https://gking.harvard.edu/ezi>), in a compact "Earlier software" list
+The `/projects/` list page shows the four projects (same order as §6.2), then an "Other software" list.
+
+**Each project page** (`/projects/<slug>/`) has a short description, links, related publications (pulled automatically from publications that share the project's tag) and an image if available.
+
+| Project (slug) | Content and links |
+|---|---|
+| **LLM research** (`llm-research`) | The research programme on using LLMs to analyse political texts. AJPS 2026 and WEP 2026, plus *LSE Public Policy Review* 2024 and *Asian Management Insights* 2025 as related writing. Collaborators: Scott De Marchi, Conor Laver, Michael Laver, Jinshuai Ma. |
+| **quallmer** (`quallmer`) | R package for qualitative analysis with LLMs, with Seraphine F. Maerz. Site <https://quallmer.github.io/quallmer/> · CRAN <https://cran.r-project.org/package=quallmer>. Related: the 2026 POAL methods brief "Application of LLMs to Qualitative Coding Tasks Using quallmer". |
+| **quanteda** (`quanteda`) | The quanteda family: quanteda <https://quanteda.io>, with quanteda.textmodels, .textstats and .textplots; readtext <https://readtext.quanteda.io>; spacyr <https://spacyr.quanteda.io>. Related: JOSS 2018 (quanteda), "Text analysis in R" (CMM 2017). |
+| **Party Policy in Modern Democracies** (`ppmd`) | The expert survey of party policy positions in 47 countries and the 2006 Routledge book with Michael Laver. Data: <https://www.tcd.ie/Political_Science/ppmd/>. Related: ES 2007 (expert surveys vs. hand coding), JJPS 2005, JOP 2009, EJPR 2006. |
+
+**Other software** (a compact list at the bottom):
+- tokenizers, with Lincoln Mullen et al. (JOSS 2018)
+- Wordscores (Stata; no longer hosted)
+- EzI, with Gary King: <https://gking.harvard.edu/ezi> (1998 APSA Best Research Software Award)
 
 ### 8.3 People
 
@@ -316,7 +334,8 @@ The agent must **not** add guessed links for co-authors without showing the owne
 | `/associates/` | `/people/` |
 | `/current/` | `/#research-areas` |
 | `/author/ken-benoit/` | `/bio/` |
-| `/software/`, `/posts/`, blog post URLs | Unchanged |
+| `/software/` | `/projects/` |
+| `/posts/`, blog post URLs | Unchanged |
 
 ### 9.3 Acceptance test
 
@@ -344,7 +363,7 @@ Implement mysite's "AI & Search Visibility" section in full:
 ## 11. Explicitly excluded
 
 - **Disqus** or any comments
-- **Analytics,** unless the owner chooses a privacy-friendly option (Stefan uses Plausible)
+- **Analytics** (decided: none at launch). If wanted later, use a cookie-free option such as Plausible.
 - **Netlify CMS** or Decap
 - **The mysite design quest**
 - **The "Record this build with the mysite team" step:** the owner's choice; skip unless asked
@@ -374,7 +393,7 @@ Implement mysite's "AI & Search Visibility" section in full:
 | 0 | New repo, Hugo and Blox vendored, Netlify site wired to a deploy-preview URL (not the domain) | n/a |
 | 1 | Design tokens, navbar, home hero, one sample publication page | **Screenshots, desktop and 375px mobile.** Approve the look before going further. |
 | 2 | Publication records for all ~94 items, list page with filters | Spot-check 10 entries; confirm research-area tags |
-| 3 | Bio, Software, Teaching, People, Blog migration, static files | Review People and Bio |
+| 3 | Bio, Projects, Teaching, People, Blog migration, static files | Review Projects, People and Bio |
 | 4 | Redirects, legacy URL check, search and AI checks, accessibility check | Read the URL check report |
 | 5 | **Cut-over:** point kenbenoit.net at the new Netlify site, then re-run the URL check against production | Owner gives the go-ahead |
 
@@ -382,12 +401,14 @@ Rollback means pointing the domain back to the old Netlify site.
 
 ---
 
-## 14. Decisions needed from the owner before Phase 1
+## 14. Owner decisions (settled 15 October 2026)
 
-1. **Research areas (§6.3):** accept, rename, merge or add.
-2. **Spotlight default (§6.2):** the LLM programme or quanteda.
-3. **Featured publications (§6.4):** confirm the list.
-4. **Photo shape:** circle (Brandon) or rounded square (Stefan).
-5. **SMU institution colour:** use it as a subtle second accent, or don't use it.
-6. **Analytics:** none, or Plausible.
-7. **Repository name,** and whether it is public or private. Netlify builds either; your current site repo is public.
+| # | Decision | Outcome |
+|---|---|---|
+| 1 | Research areas | Seven areas, in the order in §6.3 |
+| 2 | Spotlight | A Projects section (§6.2): LLM research featured, then quallmer, quanteda and Party Policy in Modern Democracies. A Projects page replaces Software (§8.2). |
+| 3 | Featured publications | The six in §6.4 |
+| 4 | Photo shape | Rounded square, about 200px |
+| 5 | SMU institution colour | Not used (§5) |
+| 6 | Analytics | None at launch (§11) |
+| 7 | Repository | `kbenoit/kenbenoit-site`, public; Netlify project `kenbenoit-site` |
