@@ -95,10 +95,10 @@ params:
       - { label: "Stack Overflow", icon: stackoverflow, url: "https://stackoverflow.com/users/4158274/ken-benoit" }
     # Short orientation text for the home page; the full bio lives on /bio/.
     intro: >-
-      His research uses large language models and machine learning to analyze
-      political texts and social media, and his substantive work covers
+      My research uses large language models and machine learning to analyze
+      political texts and social media, and my substantive work covers
       comparative party competition, the European Parliament, and electoral
-      systems. His software includes the quanteda family of R packages for
+      systems. My software includes the quanteda family of R packages for
       quantitative text analysis.
   features:
     search:
