@@ -7,12 +7,17 @@
   <article>
     <header>
       <h1 data-pagefind-meta="title">{{ .Title }}</h1>
-      <p class="pub-authors">{{ delimit .Params.authors ", " }}</p>
+      <p class="pub-authors">{{ delimit .Params.authors ", " }}{{ if .Params.editors }} (eds.){{ end }}</p>
       <p class="pub-venue">
         {{ with .Params.publication }}<em>{{ . }}</em>{{ end }}
         <span class="pub-year">{{ .Date.Format "2006" }}</span>
         {{ with .Params.award }}<span class="badge">{{ . }}</span>{{ end }}
       </p>
+      {{ with .Params.research_areas }}
+      <p class="cite-meta">
+        {{ range . }}{{ $s := . }}{{ range site.Data.research_areas }}{{ if eq .slug $s }}<a class="chip" href="{{ "publication/" | relURL }}#all&area={{ .slug }}">{{ .title }}</a>{{ end }}{{ end }}{{ end }}
+      </p>
+      {{ end }}
       {{ with .Params.links }}
       <ul class="actions">
         {{ range . }}
@@ -29,6 +34,7 @@
       <p>{{ . }}</p>
     </section>
     {{ end }}
+    {{ with .Params.funding }}<p class="pub-funding">This research was funded by the {{ . }}.</p>{{ end }}
     {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
   </article>
 </main>

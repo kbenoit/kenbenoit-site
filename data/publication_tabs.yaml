@@ -1,0 +1,7 @@
+# Tabs on /publication/, in order. Each publication_types value maps to one tab.
+- { id: articles, label: Articles, types: [journal_article] }
+- { id: books, label: Books, types: [book] }
+- { id: chapters, label: Chapters, types: [book_chapter] }
+- { id: software, label: "Software & Data", types: [software, data] }
+- { id: working, label: Working Papers, types: [report] }
+- { id: other, label: Other, types: [other] }

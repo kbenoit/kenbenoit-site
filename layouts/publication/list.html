@@ -1,14 +1,88 @@
 {{ define "main" }}
+{{- $tabs := site.Data.publication_tabs -}}
+{{- $areas := site.Data.research_areas -}}
+{{- $typeTab := dict -}}
+{{- range $tabs }}{{ $t := . }}{{ range .types }}{{ $typeTab = merge $typeTab (dict . $t.id) }}{{ end }}{{ end -}}
+{{- $pubs := .Pages.ByWeight -}}
+{{- $years := slice -}}
+{{- range $pubs }}{{ $years = $years | append .Date.Year }}{{ end -}}
+{{- $years = sort ($years | uniq) "value" "desc" -}}
 <main id="main" class="wrap publist" data-pagefind-body>
   <h1>{{ .Title }}</h1>
-  <ol class="cite-list">
-    {{ range .Pages.ByDate.Reverse }}
-    <li class="cite">
-      <p class="cite-venue">{{ with .Params.publication }}<em>{{ index (split . ",") 0 }}</em>, {{ end }}{{ .Date.Format "2006" }}</p>
-      <p class="cite-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></p>
-      <p class="cite-authors">{{ delimit .Params.authors ", " }}</p>
-    </li>
+
+  <nav class="pub-tabs" role="tablist" aria-label="Publication type" hidden>
+    <button type="button" class="tab-btn active" role="tab" aria-selected="true" data-tab="all">All <span class="count">{{ len $pubs }}</span></button>
+    {{ range $tabs }}
+    <button type="button" class="tab-btn" role="tab" aria-selected="false" data-tab="{{ .id }}">{{ .label }} <span class="count">0</span></button>
     {{ end }}
-  </ol>
+  </nav>
+
+  <div class="pub-layout">
+    <aside class="pub-filters" id="f-panel" aria-label="Filter publications" hidden>
+      <label class="f-label" for="f-q">Search</label>
+      <input id="f-q" type="search" placeholder="Title, author, venue, abstract" autocomplete="off">
+
+      <label class="f-label" for="f-area">Research area</label>
+      <select id="f-area">
+        <option value="">All areas</option>
+        {{ range $areas }}<option value="{{ .slug }}">{{ .title }}</option>{{ end }}
+      </select>
+
+      <label class="f-label" for="f-sort">Sort</label>
+      <select id="f-sort">
+        <option value="new">Newest first</option>
+        <option value="old">Oldest first</option>
+        <option value="az">Title A–Z</option>
+        <option value="za">Title Z–A</option>
+      </select>
+
+      <fieldset class="f-years">
+        <legend class="f-label">Year</legend>
+        <div class="year-list">
+          {{ range $years }}
+          <label class="year-row"><input type="checkbox" name="year" value="{{ . }}"><span>{{ . }}</span></label>
+          {{ end }}
+        </div>
+      </fieldset>
+
+      <div class="f-actions">
+        <button type="button" class="btn" id="f-reset">Reset</button>
+        <button type="button" class="btn" id="f-bib">Download BibTeX</button>
+      </div>
+    </aside>
+
+    <section class="pub-results">
+      <div class="result-row">
+        <p class="result-count" id="result-count" aria-live="polite">{{ len $pubs }} of {{ len $pubs }} results</p>
+        <button type="button" class="f-toggle" id="f-toggle" aria-expanded="false" aria-controls="f-panel" hidden>Filters</button>
+      </div>
+      <ol class="cite-list" id="cite-list">
+        {{ range $pubs }}
+        {{- $type := index .Params.publication_types 0 -}}
+        {{- $tab := index $typeTab $type -}}
+        {{- $areaSlugs := .Params.research_areas | default slice -}}
+        {{- $journal := index (split (.Params.publication | default "") ",") 0 -}}
+        <li class="pub-item cite" data-tab="{{ $tab }}" data-year="{{ .Date.Year }}" data-order="{{ .Weight }}"
+            data-areas="{{ delimit $areaSlugs " " }}" data-type="{{ $type }}"
+            data-key="{{ path.Base .File.Dir }}" data-title="{{ .Title }}" data-authors="{{ delimit .Params.authors " and " }}"
+            data-pub="{{ .Params.publication }}" data-doi="{{ .Params.doi }}"
+            data-search="{{ lower (printf "%s %s %s %s" .Title (delimit .Params.authors " ") .Params.publication (.Params.abstract | default "")) }}">
+          <p class="cite-venue">{{ if eq $type "journal_article" }}{{ with $journal }}<em>{{ . }}</em>, {{ end }}{{ else }}{{ with .Params.publication }}{{ . | truncate 90 }}, {{ end }}{{ end }}{{ .Date.Year }}</p>
+          <p class="cite-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></p>
+          <p class="cite-authors">{{ delimit .Params.authors ", " }}{{ if .Params.editors }} (eds.){{ end }}</p>
+          {{ if or $areaSlugs .Params.award }}
+          <p class="cite-meta">
+            {{ with .Params.award }}<span class="badge">{{ . }}</span>{{ end }}
+            {{ range $areaSlugs }}{{ $s := . }}{{ range $areas }}{{ if eq .slug $s }}<a class="chip" href="#all&area={{ .slug }}">{{ .title }}</a>{{ end }}{{ end }}{{ end }}
+          </p>
+          {{ end }}
+        </li>
+        {{ end }}
+      </ol>
+      <p class="no-results" id="no-results" hidden>No publications match these filters.</p>
+    </section>
+  </div>
 </main>
+{{ $js := resources.Get "js/publications.js" | resources.Minify | resources.Fingerprint "sha256" }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
 {{ end }}

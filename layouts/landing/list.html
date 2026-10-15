@@ -19,7 +19,42 @@
         {{ end }}
         <li><a class="social-link social-cv" href="{{ $o.cv | relURL }}" title="Download CV">CV</a></li>
       </ul>
+      <p class="hero-more"><a href="#research-areas">Research areas &darr;</a></p>
     </div>
+  </section>
+
+  {{- $areas := site.Data.research_areas -}}
+  <section id="research-areas" class="home-section" aria-labelledby="areas-h">
+    <h2 id="areas-h">Research areas</h2>
+    {{ range $areas }}
+    {{- $a := . -}}
+    {{- $all := where site.RegularPages "Params.research_areas" "intersect" (slice $a.slug) -}}
+    <details class="area">
+      <summary>{{ .title }} <span class="area-count">{{ len $all }}</span></summary>
+      <ul class="area-items">
+        {{ range .featured }}
+          {{ with site.GetPage (printf "/publication/%s" .) }}
+          <li><span class="area-year">{{ .Date.Year }}</span> <a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ with .Params.publication }} <span class="area-venue">{{ index (split . ",") 0 }}</span>{{ end }}</li>
+          {{ end }}
+        {{ end }}
+      </ul>
+      <p class="area-all"><a href="{{ "publication/" | relURL }}#all&area={{ .slug }}">View all {{ len $all }} &rarr;</a></p>
+    </details>
+    {{ end }}
+  </section>
+
+  <section id="featured" class="home-section" aria-labelledby="feat-h">
+    <h2 id="feat-h">Selected publications</h2>
+    <ol class="cite-list">
+      {{ range sort (where site.RegularPages "Params.featured" true) "Params.featured_rank" }}
+      <li class="cite">
+        <p class="cite-venue">{{ with .Params.publication }}<em>{{ index (split . ",") 0 }}</em>, {{ end }}{{ .Date.Year }}{{ with .Params.award }} <span class="badge">{{ . }}</span>{{ end }}</p>
+        <p class="cite-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></p>
+        <p class="cite-authors">{{ delimit .Params.authors ", " }}</p>
+      </li>
+      {{ end }}
+    </ol>
+    <p class="area-all"><a href="{{ "publication/" | relURL }}">All publications &rarr;</a></p>
   </section>
 </main>
 {{ end }}

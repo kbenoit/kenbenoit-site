@@ -1,0 +1,75 @@
+[
+  {
+    "slug": "llms-ai",
+    "title": "LLMs and AI",
+    "featured": [
+      "benoit-2026-llms-political-texts",
+      "benoit-2026-llm-issue-salience",
+      "benoit-2024-ai-data-science-public",
+      "benoit-2025-forging-future-ai-rewriting"
+    ]
+  },
+  {
+    "slug": "text-as-data",
+    "title": "Text as data",
+    "featured": [
+      "laver-2003-extracting-policy-positions-political",
+      "benoit-2016-crowd-sourced-text-analysis",
+      "benoit-2019-measuring-explaining-political-sophistication",
+      "lowe-2013-validating-estimates-latent-traits",
+      "benoit-2018-quanteda-r-package-quantitative"
+    ]
+  },
+  {
+    "slug": "measuring-positions",
+    "title": "Measuring party positions",
+    "featured": [
+      "benoit-2007-estimating-party-policy-positions",
+      "benoit-2006-party-policy-modern-democracies",
+      "benoit-2009-treating-words-data-error",
+      "mikhaylov-2012-coder-reliability-misclassification-human",
+      "lowe-2011-scaling-policy-preferences-coded"
+    ]
+  },
+  {
+    "slug": "party-competition",
+    "title": "Party competition",
+    "featured": [
+      "mcelroy-2010-party-policy-group-affiliation",
+      "laver-2015-basic-arithmetic-legislative-decisions",
+      "laver-2003-evolution-party-systems-elections",
+      "schwarz-2017-estimating-intra-party-preferences",
+      "herzog-2015-unkindest-cuts-speaker-selection"
+    ]
+  },
+  {
+    "slug": "electoral-systems",
+    "title": "Electoral systems",
+    "featured": [
+      "benoit-2007-electoral-laws-political-consequences",
+      "benoit-2004-models-electoral-system-change",
+      "benoit-2006-duvergers-law-study-electoral",
+      "benoit-2001-district-magnitude-electoral-formula"
+    ]
+  },
+  {
+    "slug": "hungary-postcommunist",
+    "title": "Hungary and post-communist politics",
+    "featured": [
+      "benoit-2001-institutional-choice-democracies-bargaining",
+      "benoit-2004-institutional-change-persistence-evolution",
+      "benoit-2002-like-deja-vu-again",
+      "benoit-1996-hungarys-two-vote-electoral"
+    ]
+  },
+  {
+    "slug": "campaign-spending",
+    "title": "Campaign spending",
+    "featured": [
+      "benoit-2008-campaign-value-incumbency-solution",
+      "benoit-2010-incumbent-challenger-campaign-spending",
+      "benoit-2003-few-euros-campaign-spending",
+      "benoit-2003-campaign-spending-local-government"
+    ]
+  }
+]
