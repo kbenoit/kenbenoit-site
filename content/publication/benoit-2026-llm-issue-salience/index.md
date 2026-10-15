@@ -5,6 +5,7 @@ weight: 1
 authors: ["Kenneth Benoit", "Michael Laver"]
 publication_types: ["journal_article"]
 publication: "West European Politics"
+venue: "West European Politics"
 doi: "10.1080/01402382.2026.2637134"
 links:
   - name: "Publisher's Version"

@@ -34,7 +34,7 @@
       <ul class="area-items">
         {{ range .featured }}
           {{ with site.GetPage (printf "/publication/%s" .) }}
-          <li><span class="area-year">{{ .Date.Year }}</span> <a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ with .Params.publication }} <span class="area-venue">{{ index (split . ",") 0 }}</span>{{ end }}</li>
+          <li>{{ partial "citation.html" (dict "page" . "actions" false) }}</li>
           {{ end }}
         {{ end }}
       </ul>
@@ -47,11 +47,7 @@
     <h2 id="feat-h">Selected publications</h2>
     <ol class="cite-list">
       {{ range sort (where site.RegularPages "Params.featured" true) "Params.featured_rank" }}
-      <li class="cite">
-        <p class="cite-venue">{{ with .Params.publication }}<em>{{ index (split . ",") 0 }}</em>, {{ end }}{{ .Date.Year }}{{ with .Params.award }} <span class="badge">{{ . }}</span>{{ end }}</p>
-        <p class="cite-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></p>
-        <p class="cite-authors">{{ delimit .Params.authors ", " }}</p>
-      </li>
+      <li class="cite">{{ partial "citation.html" (dict "page" . "actions" false) }}</li>
       {{ end }}
     </ol>
     <p class="area-all"><a href="{{ "publication/" | relURL }}">All publications &rarr;</a></p>

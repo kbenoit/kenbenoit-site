@@ -5,6 +5,7 @@ weight: 79
 authors: ["Kenneth Benoit"]
 publication_types: ["book_chapter"]
 publication: "In Founding Elections in Eastern Europe: Elections to the 1994 Hungarian National Assembly, eds. Gábor Tóka and Zsolt Enyedi. Berlin: Sigma"
+venue: "Founding Elections in Eastern Europe: Elections to the 1994 Hungarian National Assembly"
 links:
   - name: "PDF"
     url: "/pdfs/hungellaw1994elections.pdf"

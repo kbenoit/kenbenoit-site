@@ -225,7 +225,7 @@ Tabs, each showing a live count as on Brandon's site: **All · Articles · Books
 **`links` buttons, in this order:**
 1. **PDF:** the existing local file at `/pdfs/<filename>`. **Do not move or rename it.**
 2. **Publisher's Version:** `https://doi.org/<doi>`
-3. **Replication:** the Dataverse DOI, or a local `/files/<zip>`
+3. **Data and Code:** the Dataverse DOI, or a local `/files/<zip>` (a separate **Data** and **Code** link where both exist)
 4. **Appendix** and **Slides,** where they exist
 
 **Award badges:**
@@ -235,19 +235,12 @@ Tabs, each showing a live count as on Brandon's site: **All · Articles · Books
 
 ### 7.3 List-page features
 
-Implement all of mysite's required list-page features:
-- sticky tabs
-- sidebar search
-- research-area filter
-- year filter
-- sort
-- "X of Y results"
-- BibTeX export of the visible results
-- URL hash sync
-- dense citation rows
-- server-rendered HTML
-
-Add Brandon's per-entry theme-tag chips.
+Modelled on Stefan Müller's list (owner decision, 15 October 2026), replacing mysite's sidebar:
+- **Citation lines in the old CV style:** `2026. “Title.” **Journal** 70(4): 1589–1605 (with Co-author, Co-author).` The journal or book title is bold italic at the same size as the title; the owner's name is omitted and co-authors follow as "(with …)".
+- **A row of small action links under each citation:** an expandable **Abstract** (where one exists), **PDF**, **Publisher's Version**, **Data and Code**, **Appendix**, and anything else worth linking (for example press coverage such as The Conversation). Any link in the front matter `links:` list appears here.
+- Sticky type tabs with live counts, and a strip of **topic pills** (the seven research areas) with live counts. No sidebar and no dropdowns.
+- A search field, an "X of Y results" count, and BibTeX export of the visible results.
+- URL hash sync (for example `#articles&area=text-as-data`), and server-rendered HTML so the list works without JavaScript.
 
 ### 7.4 Cover images
 

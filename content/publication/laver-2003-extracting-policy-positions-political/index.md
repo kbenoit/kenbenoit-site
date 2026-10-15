@@ -4,7 +4,8 @@ date: 2003-05-01
 weight: 48
 authors: ["Michael Laver", "Kenneth Benoit", "John Garry"]
 publication_types: ["journal_article"]
-publication: "American Political Science Review, 97(2): 311–331"
+publication: "American Political Science Review 97(2): 311–331"
+venue: "American Political Science Review"
 doi: "10.1017/S0003055403000698"
 links:
   - name: "PDF"

@@ -4,7 +4,8 @@ date: 2007-01-01
 weight: 34
 authors: ["Kenneth Benoit", "Michael Laver"]
 publication_types: ["journal_article"]
-publication: "Electoral Studies, 26: 130–135"
+publication: "Electoral Studies 26: 130–135"
+venue: "Electoral Studies"
 doi: "10.1016/j.electstud.2006.04.001"
 links:
   - name: "PDF"

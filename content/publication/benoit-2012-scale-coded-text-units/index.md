@@ -4,7 +4,8 @@ date: 2012-01-01
 weight: 18
 authors: ["Kenneth Benoit", "Michael Laver", "Will Lowe", "Slava Mikhaylov"]
 publication_types: ["journal_article"]
-publication: "Electoral Studies, 31: 605–608"
+publication: "Electoral Studies 31: 605–608"
+venue: "Electoral Studies"
 doi: "10.1016/j.electstud.2012.05.004"
 links:
   - name: "PDF"

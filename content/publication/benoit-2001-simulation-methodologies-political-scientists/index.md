@@ -5,6 +5,7 @@ weight: 86
 authors: ["Kenneth Benoit"]
 publication_types: ["other"]
 publication: "The Political Methodologist 10(1, Fall): 12–16"
+venue: "The Political Methodologist"
 links:
   - name: "PDF"
     url: "/pdfs/benoit_2001_TPM.pdf"

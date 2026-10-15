@@ -4,7 +4,8 @@ date: 1996-01-01
 weight: 57
 authors: ["Kenneth Benoit", "Gary King"]
 publication_types: ["journal_article"]
-publication: "Social Science Computer Review, 14(4): 433–438"
+publication: "Social Science Computer Review 14(4): 433–438"
+venue: "Social Science Computer Review"
 doi: "10.1177/089443939601400405"
 links:
   - name: "PDF"

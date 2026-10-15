@@ -5,6 +5,7 @@ weight: 77
 authors: ["Kenneth Benoit", "Michael Laver", "Daniela Giannetti"]
 publication_types: ["book_chapter"]
 publication: "In Gary King, Ori Rosen, and Martin Tanner, eds. Ecological Inference: New Methodological Strategies. Cambridge: Cambridge University Press"
+venue: "Ecological Inference: New Methodological Strategies"
 links:
   - name: "PDF"
     url: "/pdfs/BGL_EI2004_Chapter.pdf"

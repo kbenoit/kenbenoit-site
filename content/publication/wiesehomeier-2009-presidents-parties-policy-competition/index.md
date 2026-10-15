@@ -4,7 +4,8 @@ date: 2009-10-01
 weight: 26
 authors: ["Nina Wiesehomeier", "Kenneth Benoit"]
 publication_types: ["journal_article"]
-publication: "Journal of Politics, 71(4): 1435–1447"
+publication: "Journal of Politics 71(4): 1435–1447"
+venue: "Journal of Politics"
 doi: "10.1017/S0022381609990193"
 links:
   - name: "PDF"

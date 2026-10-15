@@ -4,7 +4,8 @@ date: 2009-12-01
 weight: 25
 authors: ["Kenneth Benoit"]
 publication_types: ["journal_article"]
-publication: "Irish Political Studies, 24(4): 447–466"
+publication: "Irish Political Studies 24(4): 447–466"
+venue: "Irish Political Studies"
 doi: "10.1080/07907180903274743"
 links:
   - name: "PDF"

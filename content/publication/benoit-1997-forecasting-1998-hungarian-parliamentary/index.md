@@ -5,5 +5,6 @@ weight: 89
 authors: ["Kenneth Benoit"]
 publication_types: ["other"]
 publication: "[In Hungarian] Századvég 5 (Summer): 149–166"
+venue: "Századvég"
 research_areas: ["hungary-postcommunist"]
 ---

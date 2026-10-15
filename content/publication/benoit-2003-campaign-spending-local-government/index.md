@@ -4,7 +4,8 @@ date: 2003-01-01
 weight: 45
 authors: ["Kenneth Benoit", "Michael Marsh"]
 publication_types: ["journal_article"]
-publication: "Irish Political Studies, 18(2): 1–22"
+publication: "Irish Political Studies 18(2): 1–22"
+venue: "Irish Political Studies"
 doi: "10.1080/1364298042000227622"
 links:
   - name: "PDF"

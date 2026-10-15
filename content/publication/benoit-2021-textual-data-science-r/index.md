@@ -5,6 +5,7 @@ weight: 82
 authors: ["Kenneth Benoit"]
 publication_types: ["other"]
 publication: "The American Statistician 75(4): 453–454"
+venue: "The American Statistician"
 doi: "10.1080/00031305.2021.1985864"
 links:
   - name: "Publisher's Version"

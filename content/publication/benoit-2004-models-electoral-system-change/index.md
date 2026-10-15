@@ -4,7 +4,8 @@ date: 2004-01-01
 weight: 43
 authors: ["Kenneth Benoit"]
 publication_types: ["journal_article"]
-publication: "Electoral Studies, 23: 363–389"
+publication: "Electoral Studies 23: 363–389"
+venue: "Electoral Studies"
 doi: "10.1016/S0261-3794(03)00020-9"
 links:
   - name: "PDF"

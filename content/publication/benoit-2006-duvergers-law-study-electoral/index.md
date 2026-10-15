@@ -4,7 +4,8 @@ date: 2006-01-01
 weight: 39
 authors: ["Kenneth Benoit"]
 publication_types: ["journal_article"]
-publication: "French Politics, 4(1): 69–83"
+publication: "French Politics 4(1): 69–83"
+venue: "French Politics"
 doi: "10.1057/palgrave.fp.8200092"
 links:
   - name: "PDF"

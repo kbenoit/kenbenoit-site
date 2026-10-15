@@ -4,7 +4,8 @@ date: 2024-01-01
 weight: 4
 authors: ["Kenneth Benoit"]
 publication_types: ["journal_article"]
-publication: "LSE Public Policy Review, 3(3): 1–6"
+publication: "LSE Public Policy Review 3(3): 1–6"
+venue: "LSE Public Policy Review"
 doi: "10.31389/lseppr.115"
 links:
   - name: "Publisher's Version"

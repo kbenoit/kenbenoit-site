@@ -1,0 +1,43 @@
+{{- /* One citation in the style of the old CV: year. “Title.” **Venue** details (with co-authors). Optional action links below.
+       Input: dict "page" <publication page> "actions" <bool> */ -}}
+{{- $p := .page -}}
+{{- $me := site.Params.owner.name -}}
+{{- $type := index $p.Params.publication_types 0 -}}
+{{- $pub := $p.Params.publication | default "" -}}
+{{- $venue := $p.Params.venue -}}
+{{- $others := slice -}}
+{{- range $p.Params.authors }}{{ if ne . $me }}{{ $others = $others | append . }}{{ end }}{{ end -}}
+{{- $n := len $others -}}
+{{- $with := "" -}}
+{{- if eq $n 1 }}{{ $with = index $others 0 }}
+{{- else if eq $n 2 }}{{ $with = printf "%s and %s" (index $others 0) (index $others 1) }}
+{{- else if gt $n 2 }}{{ $with = printf "%s, and %s" (delimit (first (sub $n 1) $others) ", ") (index $others (sub $n 1)) }}{{ end -}}
+{{- $isWork := in (slice "book" "software") $type -}}
+<p class="cite-line">
+  {{- $p.Date.Year }}.
+  {{ if $isWork -}}
+    <strong><em><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></em></strong>{{ if not (or (hasSuffix $p.Title "?") (hasSuffix $p.Title ".")) }}.{{ end }}
+  {{- else -}}
+    “<a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a>{{ if not (or (hasSuffix $p.Title "?") (hasSuffix $p.Title ".")) }}.{{ end }}”
+  {{- end }}
+  {{- with $pub }}
+    {{ if and $venue (strings.Contains $pub $venue) -}}
+      {{ strings.Replace ($pub | htmlEscape) ($venue | htmlEscape) (printf "<strong><em>%s</em></strong>" ($venue | htmlEscape)) 1 | safeHTML }}
+    {{- else -}}{{ . }}{{- end -}}
+  {{- end }}
+  {{- if $with }} ({{ if $p.Params.editors }}edited with{{ else }}with{{ end }} {{ $with }}){{ end }}.
+</p>
+{{- if .actions }}
+{{- $abstract := $p.Params.abstract -}}
+<div class="cite-actions">
+  {{- if $abstract }}<button type="button" class="act act-abs" data-abs aria-expanded="false" hidden>{{ partial "act-icon.html" "chevron" }}Abstract</button>{{ end -}}
+  {{- range $p.Params.links }}
+  {{- $u := .url -}}
+  {{- if not (hasPrefix $u "http") }}{{ $u = (strings.TrimPrefix "/" $u) | relURL }}{{ end -}}
+  {{- $icon := "globe" -}}
+  {{- if in (slice "PDF" "Full text") .name }}{{ $icon = "pdf" }}{{ else if in (slice "Data and Code" "Data" "Code" "Appendix" "Coding instructions") .name }}{{ $icon = "data" }}{{ end -}}
+  <a class="act" href="{{ $u }}"{{ if hasPrefix .url "http" }} rel="noopener"{{ end }}>{{ partial "act-icon.html" $icon }}{{ .name }}</a>
+  {{- end }}
+</div>
+{{- with $abstract }}<div class="cite-abstract" data-abs-panel><p>{{ . }}</p></div>{{ end }}
+{{- end }}

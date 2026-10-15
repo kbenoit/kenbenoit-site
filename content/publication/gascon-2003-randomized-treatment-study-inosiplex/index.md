@@ -5,6 +5,7 @@ weight: 50
 authors: ["Generoso G. Gascon", "et al."]
 publication_types: ["journal_article"]
 publication: "Journal of Child Neurology 18: 819–827"
+venue: "Journal of Child Neurology"
 links:
   - name: "PDF"
     url: "/pdfs/J%20Child%20Neurol-2003-Gascon-819-27.pdf"

@@ -4,7 +4,8 @@ date: 2016-01-01
 weight: 12
 authors: ["Paul Nulty", "Yannis Theocharis", "Sebastian Adrian Popa", "Olivier Parnet", "Kenneth Benoit"]
 publication_types: ["journal_article"]
-publication: "Electoral Studies, 44: 429–444"
+publication: "Electoral Studies 44: 429–444"
+venue: "Electoral Studies"
 doi: "10.1016/j.electstud.2016.04.014"
 links:
   - name: "PDF"

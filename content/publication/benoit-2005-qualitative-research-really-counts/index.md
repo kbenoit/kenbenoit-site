@@ -5,6 +5,7 @@ weight: 84
 authors: ["Kenneth Benoit"]
 publication_types: ["other"]
 publication: "Qualitative Methods Newsletter (Spring)"
+venue: "Qualitative Methods Newsletter"
 links:
   - name: "PDF"
     url: "/pdfs/QualReallyCounts2005.pdf"

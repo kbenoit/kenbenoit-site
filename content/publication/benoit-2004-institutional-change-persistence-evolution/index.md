@@ -4,7 +4,8 @@ date: 2004-05-01
 weight: 44
 authors: ["Kenneth Benoit", "Jacqueline Hayden"]
 publication_types: ["journal_article"]
-publication: "Journal of Politics, 66(2): 396–427"
+publication: "Journal of Politics 66(2): 396–427"
+venue: "Journal of Politics"
 doi: "10.1111/j.1468-2508.2004.00157.x"
 links:
   - name: "PDF"

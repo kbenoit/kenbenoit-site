@@ -4,7 +4,8 @@ date: 1996-01-01
 weight: 58
 authors: ["Kenneth Benoit"]
 publication_types: ["journal_article"]
-publication: "Representation, 33(4): 162–170"
+publication: "Representation 33(4): 162–170"
+venue: "Representation"
 doi: "10.1080/00344899608522977"
 links:
   - name: "PDF"

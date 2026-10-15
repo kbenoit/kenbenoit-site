@@ -4,7 +4,8 @@ date: 2012-01-01
 weight: 17
 authors: ["Thomas Däubler", "Kenneth Benoit", "Slava Mikhaylov", "Michael Laver"]
 publication_types: ["journal_article"]
-publication: "British Journal of Political Science, 42(4): 937–951"
+publication: "British Journal of Political Science 42(4): 937–951"
+venue: "British Journal of Political Science"
 doi: "10.1017/S0007123412000105"
 links:
   - name: "PDF"

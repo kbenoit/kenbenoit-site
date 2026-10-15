@@ -4,7 +4,8 @@ date: 2025-07-01
 weight: 3
 authors: ["Kenneth Benoit"]
 publication_types: ["journal_article"]
-publication: "Asian Management Insights, 12(2): 12–19"
+publication: "Asian Management Insights 12(2): 12–19"
+venue: "Asian Management Insights"
 links:
   - name: "Publisher's Version"
     url: "https://cmp.smu.edu.sg/ami/issues/volume-12-issue-2/vantage-point/forging-future?new=1"

@@ -5,6 +5,7 @@ weight: 87
 authors: ["Kenneth Benoit"]
 publication_types: ["other"]
 publication: "Acta Politica: International Journal of Political Science 36 (Spring): 107–109"
+venue: "Acta Politica: International Journal of Political Science"
 links:
   - name: "PDF"
     url: "/pdfs/ActaPolitica_Review_2001.pdf"

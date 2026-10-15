@@ -4,7 +4,8 @@ date: 2015-04-01
 weight: 15
 authors: ["Michael Laver", "Kenneth Benoit"]
 publication_types: ["journal_article"]
-publication: "American Journal of Political Science, 59(2): 275–291"
+publication: "American Journal of Political Science 59(2): 275–291"
+venue: "American Journal of Political Science"
 doi: "10.1111/ajps.12111"
 links:
   - name: "PDF"

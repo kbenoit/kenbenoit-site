@@ -4,7 +4,8 @@ date: 2002-07-01
 weight: 52
 authors: ["Michael Laver", "Kenneth Benoit"]
 publication_types: ["journal_article"]
-publication: "Irish Political Studies, 17(1): 59–73"
+publication: "Irish Political Studies 17(1): 59–73"
+venue: "Irish Political Studies"
 doi: "10.1080/714003143"
 links:
   - name: "PDF"

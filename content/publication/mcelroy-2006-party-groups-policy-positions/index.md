@@ -5,6 +5,7 @@ weight: 92
 authors: ["Gail McElroy", "Kenneth Benoit"]
 publication_types: ["report"]
 publication: "Institute for International Integration Studies Discussion Paper No. 101"
+venue: "Institute for International Integration Studies Discussion Paper"
 links:
   - name: "Download"
     url: "https://www.tcd.ie/triss/assets/PDFs/iiis/iiisdp101.pdf"
