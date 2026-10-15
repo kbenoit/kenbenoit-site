@@ -88,7 +88,7 @@ Brand on the left, links on the right, search icon (mysite navbar rules apply):
 `KENNETH BENOIT` · Bio · Projects · Publications · Teaching · People · CV · 🔍
 
 - **CV** links straight to `/pdfs/KenBenoitCV.pdf`, as on Stefan's site.
-- **Research Areas** isn't a separate page; it is a section of the home page, linked as `/#research-areas` from the hero.
+- **Research Areas** isn't a separate page; it is a section of the home page, reachable at `/#research-areas` (the anchor is kept for the old `/current/` redirect). Owner decision (15 October 2026): no jump link from the hero.
 
 ### 4.2 Pages
 

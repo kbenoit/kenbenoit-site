@@ -178,7 +178,6 @@ a:hover { color: var(--color-link-hover-text); }
 .pub-funding { margin-top: 1.5rem; font-size: 0.88rem; color: var(--color-text-muted); }
 
 /* ---- Home sections ---- */
-.hero-more { margin: 0.9rem 0 0; font-size: 0.92rem; }
 .home-section { padding-top: 2rem; padding-bottom: 1rem; max-width: 900px; }
 #publications, #research-areas { scroll-margin-top: calc(var(--nav-height) + 0.5rem); }
 .home-section h2 { margin: 0 0 1rem; font-size: 1.25rem; padding-bottom: 0.4rem; border-bottom: 2px solid var(--color-accent); display: inline-block; }
