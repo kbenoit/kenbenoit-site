@@ -1,0 +1,25 @@
+{{ define "main" }}
+{{- $o := site.Params.owner -}}
+{{- $photo := resources.Get $o.photo -}}
+<main id="main" class="wrap home" data-pagefind-body>
+  <section class="hero" aria-labelledby="hero-name">
+    {{ with $photo }}
+      {{- $img := .Resize "300x300 jpg q85" -}}
+      <img class="hero-photo" src="{{ $img.RelPermalink }}" width="150" height="150" alt="{{ $o.photo_alt }}" fetchpriority="high" decoding="async" />
+    {{ end }}
+    <div class="hero-text">
+      <p class="eyebrow"><a href="{{ $o.institution_url }}">{{ $o.institution }}</a></p>
+      <h1 id="hero-name">{{ $o.name }}</h1>
+      <p class="hero-title">{{ $o.title }}</p>
+      <p class="hero-intro">{{ $o.intro }}</p>
+      <ul class="social" aria-label="Contact and profiles">
+        {{ range $o.social }}
+          {{- $svg := resources.Get (printf "icons/%s.svg" .icon) -}}
+          <li><a class="social-link" href="{{ .url }}" aria-label="{{ .label }}" title="{{ .label }}"{{ if hasPrefix .url "http" }} rel="noopener"{{ end }}>{{ with $svg }}{{ .Content | safeHTML }}{{ end }}</a></li>
+        {{ end }}
+        <li><a class="social-link social-cv" href="{{ $o.cv | relURL }}" title="Download CV">CV</a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+{{ end }}

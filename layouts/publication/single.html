@@ -1,0 +1,35 @@
+{{ define "main" }}
+<main id="main" class="wrap pub" data-pagefind-body>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="{{ site.Home.RelPermalink }}">Home</a> <span aria-hidden="true">/</span>
+    <a href="{{ "publication/" | relURL }}">Publications</a>
+  </nav>
+  <article>
+    <header>
+      <h1 data-pagefind-meta="title">{{ .Title }}</h1>
+      <p class="pub-authors">{{ delimit .Params.authors ", " }}</p>
+      <p class="pub-venue">
+        {{ with .Params.publication }}<em>{{ . }}</em>{{ end }}
+        <span class="pub-year">{{ .Date.Format "2006" }}</span>
+        {{ with .Params.award }}<span class="badge">{{ . }}</span>{{ end }}
+      </p>
+      {{ with .Params.links }}
+      <ul class="actions">
+        {{ range . }}
+          {{- $u := .url -}}
+          {{- if not (hasPrefix $u "http") }}{{ $u = (strings.TrimPrefix "/" $u) | relURL }}{{ end -}}
+          <li><a class="btn" href="{{ $u }}"{{ if hasPrefix .url "http" }} rel="noopener"{{ end }}>{{ .name }}</a></li>
+        {{ end }}
+      </ul>
+      {{ end }}
+    </header>
+    {{ with .Params.abstract }}
+    <section id="abstract" class="pub-abstract">
+      <h2>Abstract</h2>
+      <p>{{ . }}</p>
+    </section>
+    {{ end }}
+    {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+  </article>
+</main>
+{{ end }}

@@ -1,0 +1,55 @@
+<dialog id="search-dialog" class="search-dialog" aria-label="Search">
+  <form method="dialog" class="search-box">
+    <div class="search-head">
+      <input id="search-input" type="search" placeholder="Search this site" autocomplete="off" aria-label="Search this site" />
+      <button type="submit" class="search-close" aria-label="Close search">Esc</button>
+    </div>
+    <ul id="search-results" class="search-results" aria-live="polite"></ul>
+    <p id="search-fallback" class="search-fallback" hidden>
+      Search is not available here. <a href="https://www.google.com/search?q=site:kenbenoit.net" rel="noopener">Search with Google</a>.
+    </p>
+  </form>
+</dialog>
+<script>
+(function () {
+  var dlg = document.getElementById('search-dialog');
+  if (!dlg || !dlg.showModal) return;
+  var input = document.getElementById('search-input');
+  var list = document.getElementById('search-results');
+  var fallback = document.getElementById('search-fallback');
+  var pf = null, timer = null;
+
+  function open() { if (!dlg.open) dlg.showModal(); input.focus(); input.select(); }
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest('[data-search-toggle]');
+    if (t) { e.preventDefault(); open(); }
+    else if (e.target === dlg) dlg.close();
+  });
+  document.addEventListener('keydown', function (e) {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); dlg.open ? dlg.close() : open(); }
+  });
+
+  function load() {
+    if (pf) return Promise.resolve(pf);
+    return import('{{ "pagefind/pagefind.js" | relURL }}').then(function (m) { pf = m; return m; });
+  }
+  function run() {
+    var q = input.value.trim();
+    list.textContent = '';
+    if (!q) return;
+    load().then(function (m) { return m.search(q); }).then(function (res) {
+      return Promise.all(res.results.slice(0, 8).map(function (r) { return r.data(); }));
+    }).then(function (items) {
+      fallback.hidden = true;
+      if (!items.length) { var li = document.createElement('li'); li.className = 'search-empty'; li.textContent = 'No results.'; list.appendChild(li); return; }
+      items.forEach(function (d) {
+        var li = document.createElement('li');
+        var a = document.createElement('a'); a.href = d.url; a.textContent = (d.meta && d.meta.title) || d.url;
+        var p = document.createElement('p'); p.innerHTML = d.excerpt;
+        li.appendChild(a); li.appendChild(p); list.appendChild(li);
+      });
+    }).catch(function () { fallback.hidden = false; });
+  }
+  input.addEventListener('input', function () { clearTimeout(timer); timer = setTimeout(run, 200); });
+})();
+</script>
