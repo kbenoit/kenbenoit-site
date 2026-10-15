@@ -97,15 +97,15 @@ a:hover { color: var(--color-link-hover-text); }
 
 /* ---- Home hero ---- */
 .hero { display: flex; flex-direction: column; gap: 1.75rem; padding-top: 3rem; padding-bottom: 4rem; }
-.hero-photo { width: 200px; height: 200px; border-radius: 16px; object-fit: cover; box-shadow: var(--shadow-soft); flex: none; }
+.hero-photo { width: 150px; height: 150px; border-radius: 12px; object-fit: cover; box-shadow: var(--shadow-soft); flex: none; }
 .eyebrow { margin: 0 0 0.5rem; font-family: var(--font-hyperlegible); font-weight: 700; font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; }
 .eyebrow a { color: var(--color-accent); text-decoration: none; }
 .eyebrow a:hover { color: var(--color-link-hover-text); text-decoration: underline; }
-.hero h1 { margin: 0; font-size: clamp(2.25rem, 5vw, 3.25rem); font-weight: 700; letter-spacing: -0.01em; }
-.hero-title { margin: 0.5rem 0 0; font-size: 1.1rem; color: var(--color-text-muted); max-width: 40rem; }
+.hero h1 { margin: 0; font-size: clamp(1.6rem, 3vw, 2rem); font-weight: 700; }
+.hero-title { margin: 0.4rem 0 0; font-size: 1rem; color: var(--color-text-muted); max-width: 40rem; }
 .hero-intro { margin: 1.25rem 0 0; max-width: 40rem; }
 @media (min-width: 720px) {
-  .hero { flex-direction: row; align-items: flex-start; gap: 3rem; padding-top: 4.5rem; }
+  .hero { flex-direction: row; align-items: flex-start; gap: 2.5rem; padding-top: 3.5rem; }
 }
 
 /* ---- Publication page ---- */
@@ -113,7 +113,7 @@ a:hover { color: var(--color-link-hover-text); }
 .crumbs { font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: 1.5rem; }
 .crumbs a { color: var(--color-text-muted); }
 .crumbs a:hover { color: var(--color-link-hover-text); }
-.pub h1 { margin: 0 0 0.75rem; font-size: clamp(1.6rem, 3.5vw, 2.1rem); font-weight: 700; }
+.pub h1 { margin: 0 0 0.75rem; font-size: clamp(1.2rem, 2vw, 1.45rem); font-weight: 700; line-height: 1.3; }
 .pub-authors { margin: 0; font-size: 1.05rem; }
 .pub-venue { margin: 0.35rem 0 0; color: var(--color-text-muted); }
 .pub-year::before { content: "· "; }
