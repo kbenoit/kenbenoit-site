@@ -85,10 +85,10 @@ The live site at `kenbenoit.net` (repo `kbenoit/kbenoit-hugo-site`, Hugo 0.110 +
 
 Brand on the left, links on the right, search icon (mysite navbar rules apply):
 
-`KENNETH BENOIT` · Bio · Projects · Publications · Teaching · People · Blog · CV · 🔍
+`KENNETH BENOIT` · Bio · Projects · Publications · Teaching · People · CV · 🔍
 
 - **CV** links straight to `/pdfs/KenBenoitCV.pdf`, as on Stefan's site.
-- **Research Areas** isn't a separate page; it is a section of the home page, linked as `/#research-areas` from the hero.
+- **Research Areas** isn't a separate page; it is a section of the home page, reachable at `/#research-areas` (the anchor is kept for the old `/current/` redirect). Owner decision (15 October 2026): no jump link from the hero.
 
 ### 4.2 Pages
 
@@ -100,7 +100,7 @@ Brand on the left, links on the right, search icon (mysite navbar rules apply):
 | Projects | `/projects/` | Four project pages, plus an "Other software" list (§8.2). Replaces the old `/software/` page. |
 | Teaching | `/teaching/` | From the CV teaching section, plus links to course pages in the blog archive |
 | People | `/people/` | Current post-doc, PhD alumni, post-doc alumni, then co-authors (§8.3) |
-| Blog | `/posts/` (keep the existing path) | 58 posts with their original URLs (§8.4) |
+| Blog (archive) | `/posts/` (keep the existing path) | 58 posts with their original URLs (§8.4). Owner decision (15 October 2026): not in the menu and not in site search, but every URL stays live. |
 
 ---
 
@@ -266,7 +266,7 @@ Put them under headings: Positions · Education · Service · Grants · Awards.
 
 ### 8.2 Projects
 
-The `/projects/` list page shows the four projects (same order as §6.2), then an "Other software" list.
+The `/projects/` list page shows five projects as cards (the three on the home page first, then quallmer and LLM research, set in `data/projects.yaml`), then an "Other software" list.
 
 **Each project page** (`/projects/<slug>/`) has a short description, links, related publications (pulled automatically from publications that share the project's tag) and an image if available.
 
