@@ -23,6 +23,19 @@
     </div>
   </section>
 
+  <section id="projects" class="home-section" aria-labelledby="proj-h">
+    <h2 id="proj-h">Projects</h2>
+    <ul class="proj-grid">
+      {{ range site.Data.projects }}
+      <li class="proj">
+        <h3 class="proj-title">{{ if .url }}<a href="{{ .url }}" rel="noopener">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}</h3>
+        <p class="proj-desc">{{ .description }}</p>
+        {{ with .links }}<p class="proj-links">{{ range . }}<a href="{{ .url }}" rel="noopener">{{ .name }} &rarr;</a> {{ end }}</p>{{ end }}
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+
   {{- $areas := site.Data.research_areas -}}
   {{- $stop := slice "of" "and" "the" "for" "in" "on" "to" "a" "an" -}}
   <section id="publications" class="home-section" aria-labelledby="pubs-h">

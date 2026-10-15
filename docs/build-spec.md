@@ -150,16 +150,15 @@ Brand on the left, links on the right, search icon (mysite navbar rules apply):
 - **Buttons, all in one style:** Download CV · Email · Google Scholar · GitHub
 - **Mobile:** the photo stacks above the text.
 
-### 6.2 Projects (one featured, three cards)
+### 6.2 Projects (three cards)
 
-Four projects, each with its own page at `/projects/<slug>/` (§8.2). Set the order and the featured project in `data/projects.yaml`, so they're easy to change.
+Owner decision (15 October 2026): the home page shows three projects as equal cards, set in `data/projects.yaml`, replacing the featured band and four cards originally planned:
 
-- **Featured, full-width band** (like Brandon's featured book): **LLM research**. Lead with the AJPS 2026 paper, "Using Large Language Models to Analyze Political Texts Through Natural Language Understanding", plus West European Politics 2026 ("Measuring issue salience for political parties using LLMs").
-- **Then a row of three cards:**
-  1. **quallmer:** R package for qualitative analysis with LLMs (with Seraphine F. Maerz)
-  2. **quanteda:** the quanteda family of R packages for text analysis
-  3. **Party Policy in Modern Democracies:** the 2006 expert survey project and book (with Michael Laver)
-- **Each card shows** a title, one-sentence description, an image if available, and a "More →" link to the project page.
+1. **AI-Assisted Content Analysis:** the owner's book under contract with Sage, building on quallmer and the work using LLMs.
+2. **quanteda:** the quanteda family of R packages for text analysis.
+3. **Expert surveys (PPMD):** the Party Policy in Modern Democracies expert survey dataset.
+
+Each card has a title, one-sentence description and a link. Until the Projects pages exist (Phase 3), the links go to the projects' own sites. The `/projects/` page (§8.2) should list these three and the other projects (quallmer, LLM research).
 
 ### 6.3 Research areas
 
