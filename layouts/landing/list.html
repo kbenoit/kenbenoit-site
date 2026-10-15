@@ -53,7 +53,7 @@
           {{- $label = substr $label 0 5 -}}
         {{- end -}}
         <li><a class="feat-row" href="{{ .RelPermalink }}">
-          {{ with $cover }}{{ with resources.Get (printf "covers/%s" .file) }}<img class="feat-cover" src="{{ .RelPermalink }}" width="48" height="64" alt="" loading="lazy">{{ end }}{{ else }}<span class="feat-tile{{ if gt (len $label) 3 }} feat-tile-sm{{ end }}" aria-hidden="true">{{ $label }}</span>{{ end }}
+          {{ with $cover }}{{ with resources.Get (printf "covers/%s" .file) }}<img class="feat-cover{{ if $cover.square }} feat-cover-sq{{ end }}" src="{{ .RelPermalink }}" width="48" height="{{ if $cover.square }}48{{ else }}64{{ end }}" alt="" loading="lazy">{{ end }}{{ else }}<span class="feat-tile{{ if gt (len $label) 3 }} feat-tile-sm{{ end }}" aria-hidden="true">{{ $label }}</span>{{ end }}
           <span class="feat-body">
             <span class="feat-meta"><strong><em>{{ .Params.venue | default .Params.publication }}</em></strong>, {{ .Date.Year }}{{ with .Params.award }} <span class="badge">{{ . }}</span>{{ end }}</span>
             <span class="feat-title">{{ .Title }}</span>
