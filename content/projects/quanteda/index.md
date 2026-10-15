@@ -12,8 +12,6 @@ links:
     url: "https://spacyr.quanteda.io"
 ---
 
-The quanteda project also includes [spacyr](https://spacyr.quanteda.io), [readtext](https://readtext.quanteda.io), [quanteda.textstats](https://github.com/quanteda/quanteda.textstats), [quanteda.textmodels](https://github.com/quanteda/quanteda.textmodels), [quanteda.textplots](https://github.com/quanteda/quanteda.textplots) and [quanteda.tidy](https://github.com/quanteda/quanteda.tidy).
-
 **[quanteda](https://quanteda.io)** is an R package for the Quantitative Analysis of Textual Data, with companion packages [quanteda.textmodels](https://github.com/quanteda/quanteda.textmodels), [quanteda.textstats](https://github.com/quanteda/quanteda.textstats) and [quanteda.textplots](https://github.com/quanteda/quanteda.textplots).
 
 **[readtext](https://readtext.quanteda.io)** is an R package for reading text files in all their various formats.
