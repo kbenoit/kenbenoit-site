@@ -3,7 +3,8 @@
 {{- $areas := site.Data.research_areas -}}
 {{- $typeTab := dict -}}
 {{- range $tabs }}{{ $t := . }}{{ range .types }}{{ $typeTab = merge $typeTab (dict . $t.id) }}{{ end }}{{ end -}}
-{{- $pubs := .Pages.ByWeight -}}
+{{- /* Newest first; entries from the same date keep their manual weight order. */ -}}
+{{- $pubs := sort (sort .Pages "Weight" "asc") "Date" "desc" -}}
 <main id="main" class="wrap publist" data-pagefind-body>
   <h1>{{ .Title }}</h1>
 

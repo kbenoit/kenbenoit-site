@@ -23,3 +23,17 @@
 # Page 1 of a category or tag list was a separate address on the old site.
 - { from: "/category/:name/page/1/",    to: "/category/:name/" }
 - { from: "/tag/:name/page/1/",         to: "/tag/:name/" }
+# Publication pages removed on 16 Oct 2026 (papers later published, conference papers, and software or data now listed on /projects/).
+- { from: /publication/benoit-2007-mapping-policy-preferences-uncertainty/, to: "/publication/" }
+- { from: /publication/benoit-2005-national-party-competition-support/, to: "/publication/" }
+- { from: /publication/benoit-2005-integer-arithmetic-legislative-dynamics/, to: "/publication/" }
+- { from: /publication/benoit-2002-extracting-policy-positions-political/, to: "/publication/" }
+- { from: /publication/benoit-2001-two-steps-forward-one/, to: "/publication/" }
+- { from: /publication/schiemann-1997-bargaining-institutional-choice-origins/, to: "/publication/" }
+- { from: /publication/benoit-1994-re-examining-regime-type/, to: "/publication/" }
+- { from: /publication/mcelroy-2007-policy-model-party-group/, to: "/publication/" }
+- { from: /publication/mcelroy-2006-party-groups-policy-positions/, to: "/publication/" }
+- { from: /publication/benoit-2003-wordscores-software-coding-political/, to: "/projects/#software" }
+- { from: /publication/benoit-1996-ezi-n-easy-program/, to: "/projects/#software" }
+- { from: /publication/king-1999-record-american-democracy-1984/, to: "/projects/#datasets" }
+- { from: /publication/benoit-2012-quanteda-quantitative-analysis-textual/, to: "/projects/#software" }
