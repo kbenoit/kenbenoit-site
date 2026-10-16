@@ -2,9 +2,10 @@
 <main id="main" class="wrap page" data-pagefind-body>
   <h1>{{ .Title }}</h1>
   {{ partial "page-sections.html" . }}
-  <ul class="proj-grid" id="projects">
+  <h2 class="section-title" id="projects">Projects</h2>
+  <ul class="proj-grid">
     {{ range site.Data.projects }}{{ partial "project-card.html" (dict "p" . "home" false "heading" "h2") }}{{ end }}
   </ul>
-  <div class="prose page-body-text">{{ .Content }}</div>
+  <div class="prose page-body-text sections-large">{{ .Content }}</div>
 </main>
 {{ end }}

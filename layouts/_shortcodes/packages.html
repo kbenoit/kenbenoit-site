@@ -1,0 +1,28 @@
+{{- /* {{< packages group="created" >}}: the packages of one group in data/software.json, with badges from
+       data/package_stats.json (refreshed by _automation/update_packages.py). */ -}}
+{{- $group := .Get "group" -}}
+{{- $stats := site.Data.package_stats.packages -}}
+{{- range site.Data.software.groups }}{{ if eq .id $group }}
+<ul class="pkg-list">
+  {{- range .packages }}
+  {{- $pkg := . -}}
+  {{- $n := .name -}}
+  {{- $s := index $stats $n | default dict -}}
+  {{- $home := .docs | default (printf "https://github.com/%s" .github) }}
+  <li class="pkg">
+    <p class="pkg-head"><a class="pkg-name" href="{{ $home }}" rel="noopener">{{ $n }}</a>{{ with $s.title }} <span class="pkg-title">{{ . }}</span>{{ end }}{{ with $pkg.note }} <span class="pkg-note">({{ . }})</span>{{ end }}</p>
+    <p class="pkg-badges">
+      {{- if $pkg.cran }}
+      {{- with $s.version }}<a class="pbadge" href="https://cran.r-project.org/package={{ $n }}" title="Current version on CRAN"><span class="pb-l">CRAN</span><span class="pb-v">{{ . }}</span></a>{{ end }}
+      {{- with $s.downloads_month }}<a class="pbadge" href="https://cran.r-project.org/package={{ $n }}" title="Downloads from CRAN in the last month"><span class="pb-l">downloads</span><span class="pb-v">{{ if ge . 10000 }}{{ div (int .) 1000 }}k{{ else }}{{ lang.FormatNumber 0 . }}{{ end }}/month</span></a>{{ end }}
+      {{- else }}
+      <a class="pbadge" href="https://github.com/{{ $pkg.github }}" title="Source code on GitHub"><span class="pb-l">GitHub</span><span class="pb-v">{{ $pkg.github }}</span></a>
+      {{- end }}
+      {{- with $pkg.docs }}<a class="pbadge" href="{{ . }}" title="Documentation website"><span class="pb-l">docs</span><span class="pb-v">website</span></a>{{ end }}
+      {{- with $pkg.doi }}<a class="pbadge" href="https://doi.org/{{ . }}" title="DOI {{ . }}"><span class="pb-l">DOI</span><span class="pb-v">{{ $pkg.doi_kind }}</span></a>{{ end }}
+      {{- if $s.bibtex }}<a class="pbadge" href="{{ printf "bibtex/%s.bib" $n | relURL }}" title="BibTeX citation entry"><span class="pb-l">BibTeX</span><span class="pb-v">cite</span></a>{{ end }}
+    </p>
+  </li>
+  {{- end }}
+</ul>
+{{- end }}{{ end -}}

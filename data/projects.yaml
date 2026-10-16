@@ -2,7 +2,8 @@
 - slug: ai-assisted-content-analysis
   home: true
   title: AI-Assisted Content Analysis
-  image: ai-assisted-content-analysis.png   # quallmer logo, supplied by the owner
+  image: ai-assisted-content-analysis.png   # quallmer logo, supplied by the owner (home page card)
+  projects_image: sage.png                  # Sage logo, used on the Projects page instead
   description: A book under contract with Sage, building on the quallmer R package and research on using large language models to analyze political texts.
   links:
     - { name: quallmer, url: "https://quallmer.github.io/quallmer/" }
