@@ -1,0 +1,6 @@
+{{- /* Section menu at the top of a page. Each item is a heading name (jumps to its anchor) or {name, url} (links elsewhere). */ -}}
+{{- with .Params.sections }}
+<nav class="page-sections" aria-label="On this page">
+  {{ range . }}{{ if reflect.IsMap . }}<a href="{{ .url | relURL }}">{{ .name }}</a>{{ else }}<a href="#{{ . | anchorize }}">{{ . }}</a>{{ end }}{{ end }}
+</nav>
+{{- end }}

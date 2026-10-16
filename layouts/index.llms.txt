@@ -5,7 +5,8 @@
 - [Bio]({{ "bio/" | absURL }}): positions, education, service, grants and awards
 - [Publications]({{ "publication/" | absURL }}): articles, books, chapters, software and working papers, each with an abstract where available and links to the PDF and replication data
 - [Leadership]({{ "leadership/" | absURL }}): leadership roles in universities, learned societies and journals
-- [Projects]({{ "projects/" | absURL }}): AI-Assisted Content Analysis, quanteda, expert surveys (PPMD), quallmer and LLM research
+- [Service]({{ "service/" | absURL }}): committees, external reviewing and other professional service
+- [Projects]({{ "projects/" | absURL }}): AI-Assisted Content Analysis, quanteda, expert surveys (PPMD), quallmer and LLM research, plus grants and awards
 - [Teaching]({{ "teaching/" | absURL }}): courses taught and course materials
 - [People]({{ "people/" | absURL }}): doctoral students, post-docs and co-authors
 - [CV (PDF)]({{ "pdfs/KenBenoitCV.pdf" | absURL }})

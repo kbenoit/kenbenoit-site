@@ -1,7 +1,8 @@
 {{ define "main" }}
 <main id="main" class="wrap page" data-pagefind-body>
   <h1>{{ .Title }}</h1>
-  <ul class="proj-grid">
+  {{ partial "page-sections.html" . }}
+  <ul class="proj-grid" id="projects">
     {{ range site.Data.projects }}{{ partial "project-card.html" (dict "p" . "home" false "heading" "h2") }}{{ end }}
   </ul>
   <div class="prose page-body-text">{{ .Content }}</div>
