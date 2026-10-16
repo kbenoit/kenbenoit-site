@@ -85,7 +85,7 @@ The live site at `kenbenoit.net` (repo `kbenoit/kbenoit-hugo-site`, Hugo 0.110 +
 
 Brand on the left, links on the right, search icon (mysite navbar rules apply):
 
-`KENNETH BENOIT` · Bio · Projects · Publications · Teaching · People · CV · 🔍
+`KENNETH BENOIT` · Bio · Leadership · Projects · Publications · Teaching · People · CV · 🔍
 
 - **CV** links straight to `/pdfs/KenBenoitCV.pdf`, as on Stefan's site.
 - **Research Areas** isn't a separate page; it is a section of the home page, reachable at `/#research-areas` (the anchor is kept for the old `/current/` redirect). Owner decision (15 October 2026): no jump link from the hero.
@@ -95,7 +95,9 @@ Brand on the left, links on the right, search icon (mysite navbar rules apply):
 | Page | URL | Content |
 |---|---|---|
 | Home | `/` | Hero (§6.1), projects (§6.2), research areas (§6.3), featured publications (§6.4) |
-| Bio | `/bio/` | Full bio, academic positions, education, service, grants and awards (merging the old `/cv/` sub-pages) |
+| Bio | `/bio/` | Bio text, contact details, profile icons, positions and education. Service links to `/service/`; Grants and Awards live on `/projects/` (owner decision, 16 October 2026) |
+| Service | `/service/` | Service to the discipline, editorial roles, university service and other professional service. Not in the menu; linked from Leadership and the Bio |
+| Leadership | `/leadership/` | Leadership, board and editorial roles with short descriptions, from `data/leadership.yaml` (added 16 October 2026, after the cut-over) |
 | Publications | `/publication/` | Filterable list (§7), plus `/publication/<slug>/` for each item |
 | Projects | `/projects/` | Four project pages, plus an "Other software" list (§8.2). Replaces the old `/software/` page. |
 | Teaching | `/teaching/` | From the CV teaching section, plus links to course pages in the blog archive |
@@ -266,7 +268,7 @@ Put them under headings: Positions · Education · Service · Grants · Awards.
 
 ### 8.2 Projects
 
-The `/projects/` list page shows five projects as cards (the three on the home page first, then quallmer and LLM research, set in `data/projects.yaml`), then an "Other software" list.
+The `/projects/` list page has a section menu (Projects, Other software, Grants, Awards) and shows five projects as cards (the three on the home page first, then quallmer and LLM research, set in `data/projects.yaml`), then an "Other software" list.
 
 **Each project page** (`/projects/<slug>/`) has a short description, links, related publications (pulled automatically from publications that share the project's tag) and an image if available.
 

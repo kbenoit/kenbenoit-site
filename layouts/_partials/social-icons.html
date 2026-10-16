@@ -1,0 +1,8 @@
+{{- /* The row of round profile icons and the CV chip (home page and Bio). Settings: params.owner.social. */ -}}
+<ul class="social" aria-label="Contact and profiles">
+  {{ range site.Params.owner.social }}
+    {{- $svg := resources.Get (printf "icons/%s.svg" .icon) -}}
+    <li><a class="social-link" href="{{ .url }}" aria-label="{{ .label }}" title="{{ .label }}"{{ if hasPrefix .url "http" }} rel="noopener"{{ end }}>{{ with $svg }}{{ .Content | safeHTML }}{{ end }}</a></li>
+  {{ end }}
+  <li><a class="social-link social-cv" href="{{ site.Params.owner.cv | relURL }}" title="Download CV">CV</a></li>
+</ul>

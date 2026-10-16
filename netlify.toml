@@ -27,3 +27,9 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# BibTeX entries open as plain text in the browser.
+[[headers]]
+  for = "/bibtex/*"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"

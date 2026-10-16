@@ -77,7 +77,7 @@ a:hover { color: var(--color-link-hover-text); }
 .nav-search:hover, .nav-burger:hover { color: var(--color-accent); }
 .nav-toggle-input:focus-visible ~ .nav-tools .nav-burger { outline: 2px solid var(--color-accent); outline-offset: 2px; }
 
-@media (min-width: 900px) {
+@media (min-width: 1000px) {   /* full menu only where all eight items fit on one line */
   .nav-toggle-input { display: none; }
   .nav-burger { display: none; }
   .nav-menu { display: flex; flex-direction: row; width: auto; order: 1; padding: 0; gap: 1.5rem; }
@@ -107,6 +107,7 @@ a:hover { color: var(--color-link-hover-text); }
 .social-link svg { width: 17px; height: 17px; fill: currentColor; }
 .social-link svg[stroke] { fill: none; }
 .social-link:hover { background: var(--color-accent); border-color: var(--color-accent); color: #fff; }
+.social-link { white-space: nowrap; overflow-wrap: normal; }
 .social-cv { width: auto; padding: 0 0.8rem; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.04em; }
 @media (min-width: 900px) { .social-link { width: 36px; height: 36px; } }
 
@@ -161,8 +162,8 @@ a:hover { color: var(--color-link-hover-text); }
 .cite { padding: 0.8rem 0; border-bottom: 1px solid var(--color-border); }
 .cite[hidden] { display: none; }
 .cite-line { margin: 0; line-height: 1.55; }
-.cite-line a, .proj-desc a { text-decoration-line: underline; text-decoration-thickness: 1px; text-decoration-color: rgba(35, 85, 159, 0.5); text-underline-offset: 0.18em; }
-.cite-line a:hover, .proj-desc a:hover { text-decoration-color: currentColor; }
+.cite-line a, .proj-desc a, .hero-intro a { text-decoration-line: underline; text-decoration-thickness: 1px; text-decoration-color: rgba(35, 85, 159, 0.5); text-underline-offset: 0.18em; }
+.cite-line a:hover, .proj-desc a:hover, .hero-intro a:hover { text-decoration-color: currentColor; }
 .cite-actions { display: flex; flex-wrap: wrap; gap: 0.1rem 1rem; margin-top: 0.25rem; }
 .act { display: inline-flex; align-items: center; gap: 0.3rem; font: inherit; font-size: 0.82rem; font-weight: 600; line-height: 1.6; color: var(--color-text-muted); background: none; border: 0; padding: 0; text-decoration: none; cursor: pointer; }
 .act[hidden] { display: none; }
@@ -185,7 +186,7 @@ a:hover { color: var(--color-link-hover-text); }
 .proj-grid { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 .proj { display: flow-root; padding: 1rem 1.1rem; background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 8px; }
 .proj:hover { border-color: var(--color-accent); }
-.proj-img { float: right; height: 64px; width: auto; margin: 0 0 0.4rem 0.8rem; border-radius: 4px; }
+.proj-img { float: right; height: 64px; width: auto; max-width: 96px; object-fit: contain; margin: 0 0 0.4rem 0.8rem; border-radius: 4px; }
 .proj-title { margin: 0 0 0.4rem; font-size: 1.05rem; }
 .proj-title a { text-decoration: none; }
 .proj-title a:hover { text-decoration: underline; }
@@ -224,8 +225,11 @@ a:hover { color: var(--color-link-hover-text); }
 .prose .btn:hover { color: #fff; }
 .prose img { max-width: 100%; height: auto; }
 .prose table { font-size: 0.92rem; }
+.prose ul.social { list-style: none; padding-left: 0; margin: 1.25rem 0 0; }
+.prose .social li { margin: 0; padding: 0; }
+.prose .social a { text-decoration: none; }
 .bio-portrait { float: right; width: 150px; height: 150px; margin: 0 0 1rem 1.5rem; border-radius: 12px; object-fit: cover; box-shadow: var(--shadow-soft); }
-.proj-img-lg { float: right; height: 96px; width: auto; margin: 0 0 1rem 1.5rem; }
+.proj-img-lg { float: right; height: 96px; width: auto; max-width: 170px; object-fit: contain; margin: 0 0 1rem 1.5rem; }
 .related { margin-top: 2.5rem; }
 .related h2 { font-size: 1.2rem; margin: 0 0 0.5rem; }
 .post-list { list-style: none; margin: 0; padding: 0; }
@@ -237,6 +241,33 @@ a:hover { color: var(--color-link-hover-text); }
 .post-meta a { color: var(--color-text-muted); }
 .coauthors { columns: 3 12rem; column-gap: 2rem; list-style: none; padding: 0 !important; }
 .coauthors li { break-inside: avoid; font-size: 0.95rem; }
+
+/* ---- Leadership page ---- */
+.lead-group { margin-top: 2.75rem; }
+.lead-heading { margin: 0 0 0.75rem; font-size: 1.25rem; padding-bottom: 0.4rem; border-bottom: 2px solid var(--color-accent); display: inline-block; }
+.lead-list { list-style: none; margin: 0; padding: 0; }
+.lead-row { display: flex; gap: 0.25rem 2rem; justify-content: space-between; padding: 0.85rem 0; border-bottom: 1px solid var(--color-border); }
+.lead-main { min-width: 0; }
+.lead-main p { margin: 0; }
+.lead-role { font-weight: 700; line-height: 1.4; }
+.lead-org { color: var(--color-text-muted); font-size: 0.95rem; }
+.lead-desc { margin-top: 0.3rem !important; font-size: 0.95rem; }
+.lead-years { margin: 0; flex: none; font-size: 0.92rem; color: var(--color-text-muted); text-align: right; max-width: 11rem; }
+@media (max-width: 640px) { .lead-row { flex-direction: column; } .lead-years { text-align: left; max-width: none; order: -1; } }
+
+.section-title, .sections-large.prose h2 { font-size: 1.25rem; margin: 2.75rem 0 0.75rem; padding-bottom: 0.4rem; border-bottom: 2px solid var(--color-accent); display: inline-block; }
+.sections-large.prose h3 { font-size: 1.05rem; margin: 1.75rem 0 0.4rem; }
+.section-title { margin-top: 1.75rem; }
+.prose ul.pkg-list { list-style: none; padding-left: 0; margin: 0; }
+.prose .pkg { margin: 0; padding: 0.7rem 0; border-bottom: 1px solid var(--color-border); }
+.pkg p { margin: 0; }
+.pkg-name { font-weight: 700; }
+.pkg-title, .pkg-note { font-size: 0.92rem; color: var(--color-text-muted); }
+.pkg-badges { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.45rem !important; }
+.prose a.pbadge { display: inline-flex; font-size: 0.76rem; line-height: 1.6; border: 1px solid var(--color-border); border-radius: 4px; overflow: hidden; text-decoration: none; color: var(--color-text); }
+.pb-l { padding: 0 0.45rem; background: var(--color-surface); color: var(--color-text-muted); }
+.pb-v { padding: 0 0.45rem; background: var(--color-bg); font-weight: 600; }
+.prose a.pbadge:hover { border-color: var(--color-accent); color: var(--color-text); }
 
 /* ---- Footer ---- */
 .site-footer { margin-top: 4rem; padding: 1.5rem 0 2rem; border-top: 1px solid var(--color-border); font-size: 0.85rem; color: var(--color-text-muted); }

@@ -2,8 +2,9 @@
 {{- $home := .home -}}
 {{- $h := .heading | default "h3" -}}
 {{- with .p -}}
+{{- $img := .image -}}{{- if and (not $home) .projects_image }}{{ $img = .projects_image }}{{ end -}}
 <li class="proj">
-  {{ with .image }}{{ with resources.Get (printf "projects/%s" .) }}<img class="proj-img" src="{{ .RelPermalink }}" width="{{ div .Width 2 }}" height="{{ div .Height 2 }}" alt="" loading="lazy">{{ end }}{{ end }}
+  {{ with $img }}{{ with resources.Get (printf "projects/%s" .) }}<img class="proj-img" src="{{ .RelPermalink }}" width="{{ div .Width 2 }}" height="{{ div .Height 2 }}" alt="" loading="lazy">{{ end }}{{ end }}
   {{- $href := printf "projects/%s/" .slug | relURL }}
   {{ if eq $h "h2" }}<h2 class="proj-title"><a href="{{ $href }}">{{ .title }}</a></h2>{{ else }}<h3 class="proj-title"><a href="{{ $href }}">{{ .title }}</a></h3>{{ end }}
   {{- $desc := .description -}}{{- if and $home .home_description }}{{ $desc = .home_description }}{{ end }}

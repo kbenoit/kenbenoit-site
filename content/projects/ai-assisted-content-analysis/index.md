@@ -1,7 +1,7 @@
 ---
 title: "AI-Assisted Content Analysis"
 description: "A book under contract with Sage, building on the quallmer R package and research on using large language models to analyze political texts."
-image: "ai-assisted-content-analysis.png"
+image: "sage.png"
 pub_tag: "llm-research"
 links:
   - name: "quallmer"

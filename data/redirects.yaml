@@ -4,8 +4,8 @@
 - { from: /cvs/,                       to: /bio/ }
 - { from: /cvs/page/1/,                to: /bio/ }
 - { from: /cvs/qualifications/,        to: "/bio/#positions" }
-- { from: /cvs/service/,               to: "/bio/#service" }
-- { from: /cvs/grants-and-awards/,     to: "/bio/#grants" }
+- { from: /cvs/service/,               to: /service/ }
+- { from: /cvs/grants-and-awards/,     to: "/projects/#grants" }
 - { from: /cvs/teaching/,              to: /teaching/ }
 - { from: /cvs/publications/,          to: /publication/ }
 - { from: /cvs/conferences/,           to: /bio/ }

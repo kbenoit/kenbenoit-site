@@ -12,13 +12,8 @@
       <h1 id="hero-name">{{ $o.name }}</h1>
       <p class="hero-title">{{ $o.title }}</p>
       <p class="hero-intro">{{ $o.intro }}</p>
-      <ul class="social" aria-label="Contact and profiles">
-        {{ range $o.social }}
-          {{- $svg := resources.Get (printf "icons/%s.svg" .icon) -}}
-          <li><a class="social-link" href="{{ .url }}" aria-label="{{ .label }}" title="{{ .label }}"{{ if hasPrefix .url "http" }} rel="noopener"{{ end }}>{{ with $svg }}{{ .Content | safeHTML }}{{ end }}</a></li>
-        {{ end }}
-        <li><a class="social-link social-cv" href="{{ $o.cv | relURL }}" title="Download CV">CV</a></li>
-      </ul>
+      {{ with $o.intro_more }}<p class="hero-intro">{{ . }} <a href="{{ "leadership/" | relURL }}">Leadership &rarr;</a></p>{{ end }}
+      {{ partial "social-icons.html" . }}
     </div>
   </section>
 
