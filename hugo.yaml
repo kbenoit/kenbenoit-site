@@ -121,7 +121,7 @@ params:
 
   # Opt-out switches for the mysite footer credit and invisible metadata.
   mysite:
-    credit: true
+    credit: false
     discovery: true
 
 markup:

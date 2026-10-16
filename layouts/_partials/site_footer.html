@@ -1,9 +1,6 @@
 <footer class="site-footer">
   <div class="wrap footer-inner">
     <p>&copy; {{ now.Year }} {{ site.Params.owner.name }}</p>
-    <p class="footer-credits">
-      {{- if site.Params.mysite.credit }}Created using <a href="https://garyking.org/mysite">GaryKing.org/mysite</a>. {{ end -}}
-      Built with <a href="https://hugoblox.com">Hugo Blox</a>.
-    </p>
+    {{- /* Visible credits removed at the owner's request (17 Oct 2026); the invisible generator meta tag stays. */ -}}
   </div>
 </footer>
