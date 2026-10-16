@@ -22,7 +22,7 @@
   --shadow-soft: 0 16px 40px rgba(45, 41, 38, 0.08);
   --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-hyperlegible: "Atkinson Hyperlegible", var(--font-sans);
-  --gutter: 24px;
+  --gutter: clamp(24px, 8vw, 72px);   /* side margin: 24px on phones, growing to 72px from about 900px wide */
   --nav-height: 64px;
   color-scheme: light;
 }
