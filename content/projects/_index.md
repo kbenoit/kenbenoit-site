@@ -30,9 +30,9 @@ Package versions and total download counts (from the Posit CRAN mirror, since 20
 *   **Record of American Democracy, 1984–1990**, with Gary King, Bradley Palmquist, Greg Adams, Micah Altman, Claudine Gay, Jeffrey B. Lewis, Kenneth R. Mayer, and Eric Reinhardt, 1999. Inter-university Consortium for Political and Social Research Number 2162. Winner of the 1999 APSA Best Research Web Site Award.
 ## Grants
 
-**MOE Academic Research Fund Tier 3**, Singapore Ministry of Education, for “The Curation of Blue Zone 3.0 – Examining Societal Nudges to Promote Well-being of a Super-aged Population” (MOET32025-0006), 2026–2031. S$10,212,410 total.
+**MOE Academic Research Fund Tier 3**, Singapore Ministry of Education, for “The Curation of Blue Zone 3.0 – Examining Societal Nudges to Promote Well-being of a Super-aged Population” (MOET32025-0006), 2026–2031. Co-Principal Investigator. S$10,212,410 total.
 
-**MOE 2025 Special Programmatic Grant**, Singapore Ministry of Education, for “Computational Social Simulations for Aiding Policy Design” (SSRC2025-SPG-001), 2026–2031. S$1,727,392 total.
+**MOE 2025 Special Programmatic Grant**, Singapore Ministry of Education, for “Computational Social Simulations for Aiding Policy Design” (SSRC2025-SPG-001), 2026–2031. Co-Principal Investigator. S$1,727,392 total.
 
 **ERC Proof-of-Concept Grant**, European Commission, for "QUANTEDA:
  Quantitative Analysis of Textual Data" (number 812960),
