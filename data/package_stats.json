@@ -27,7 +27,7 @@
     },
     "quanteda.tidy": {
       "version": "0.4",
-      "title": "'tidyverse' Extensions for 'quanteda'",
+      "title": "tidyverse Extensions for quanteda",
       "downloads_month": 302,
       "bibtex": true
     },
@@ -39,7 +39,7 @@
     },
     "spacyr": {
       "version": "1.3.0",
-      "title": "Wrapper to the 'spaCy' 'NLP' Library",
+      "title": "Wrapper to the spaCy NLP Library",
       "downloads_month": 1380,
       "bibtex": true
     },
@@ -61,6 +61,18 @@
       "downloads_month": 2543,
       "bibtex": true
     },
+    "quallmer": {
+      "version": "0.5.0",
+      "title": "Qualitative Analysis with Large Language Models",
+      "downloads_month": 421,
+      "bibtex": true
+    },
+    "quallmer.app": {
+      "version": "0.1.0",
+      "title": "Interactive Validation App for quallmer",
+      "downloads_month": 304,
+      "bibtex": true
+    },
     "tokenizers": {
       "version": "0.3.0",
       "title": "Fast, Consistent Tokenization of Natural Language Text",
@@ -69,7 +81,7 @@
     },
     "tidytext": {
       "version": "0.4.3",
-      "title": "Text Mining using 'dplyr', 'ggplot2', and Other Tidy Tools",
+      "title": "Text Mining using dplyr, ggplot2, and Other Tidy Tools",
       "downloads_month": 41452,
       "bibtex": true
     },

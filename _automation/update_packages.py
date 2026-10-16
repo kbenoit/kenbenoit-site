@@ -29,6 +29,12 @@ def get_json(url):
         return None
 
 
+def clean_title(t):
+    """CRAN puts single quotes around package and software names in titles; drop them for display."""
+    t = re.sub(r"[‘'’]([^‘'’]+)[‘'’]", r"\1", t)
+    return re.sub(r"\s+", " ", t).strip()
+
+
 cfg = json.load(open(os.path.join(ROOT, "data", "software.json"), encoding="utf-8"))
 stats, bibs = {}, 0
 os.makedirs(os.path.join(ROOT, "static", "bibtex"), exist_ok=True)
@@ -42,13 +48,13 @@ for g in cfg["groups"]:
             dl = get_json(f"https://cranlogs.r-pkg.org/downloads/total/last-month/{n}")
             if d:
                 entry["version"] = d.get("Version")
-                entry["title"] = re.sub(r"\s+", " ", d.get("Title", "")).strip()
+                entry["title"] = clean_title(d.get("Title", ""))
             if isinstance(dl, list) and dl:
                 entry["downloads_month"] = dl[0].get("downloads")
         elif p.get("github"):
             d = get_json(f"https://api.github.com/repos/{p['github']}")
             if d and d.get("description"):
-                entry["title"] = d["description"].strip()
+                entry["title"] = clean_title(d["description"])
         if p.get("bibtex_doi"):
             try:
                 bib = fetch(f"https://doi.org/{p['bibtex_doi']}", {"Accept": "application/x-bibtex"}).strip()

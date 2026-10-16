@@ -3,30 +3,131 @@
     {
       "id": "created",
       "packages": [
-        {"name": "quanteda", "cran": true, "github": "quanteda/quanteda", "docs": "https://quanteda.io", "doi": "10.21105/joss.00774", "doi_kind": "JOSS", "bibtex_doi": "10.21105/joss.00774"},
-        {"name": "quanteda.textstats", "cran": true, "github": "quanteda/quanteda.textstats", "bibtex_doi": "10.32614/CRAN.package.quanteda.textstats"},
-        {"name": "quanteda.textplots", "cran": true, "github": "quanteda/quanteda.textplots", "bibtex_doi": "10.32614/CRAN.package.quanteda.textplots"},
-        {"name": "quanteda.textmodels", "cran": true, "github": "quanteda/quanteda.textmodels", "bibtex_doi": "10.32614/CRAN.package.quanteda.textmodels"},
-        {"name": "quanteda.tidy", "cran": true, "github": "quanteda/quanteda.tidy", "bibtex_doi": "10.32614/CRAN.package.quanteda.tidy"},
-        {"name": "readtext", "cran": true, "github": "quanteda/readtext", "docs": "https://readtext.quanteda.io", "doi": "10.5281/zenodo.1244311", "doi_kind": "Zenodo", "bibtex_doi": "10.32614/CRAN.package.readtext"},
-        {"name": "spacyr", "cran": true, "github": "quanteda/spacyr", "docs": "https://spacyr.quanteda.io", "doi": "10.5281/zenodo.1199665", "doi_kind": "Zenodo", "bibtex_doi": "10.32614/CRAN.package.spacyr"},
-        {"name": "quanteda.corpora", "cran": false, "github": "quanteda/quanteda.corpora"},
-        {"name": "quanteda.dictionaries", "cran": false, "github": "kbenoit/quanteda.dictionaries"},
-        {"name": "stopwords", "cran": true, "github": "quanteda/stopwords", "docs": "https://quanteda.github.io/stopwords/", "bibtex_doi": "10.32614/CRAN.package.stopwords"},
-        {"name": "nsyllable", "cran": true, "github": "quanteda/nsyllable", "bibtex_doi": "10.32614/CRAN.package.nsyllable"}
+        {
+          "name": "quanteda",
+          "cran": true,
+          "github": "quanteda/quanteda",
+          "docs": "https://quanteda.io",
+          "doi": "10.21105/joss.00774",
+          "doi_kind": "JOSS",
+          "bibtex_doi": "10.21105/joss.00774"
+        },
+        {
+          "name": "quanteda.textstats",
+          "cran": true,
+          "github": "quanteda/quanteda.textstats",
+          "bibtex_doi": "10.32614/CRAN.package.quanteda.textstats"
+        },
+        {
+          "name": "quanteda.textplots",
+          "cran": true,
+          "github": "quanteda/quanteda.textplots",
+          "bibtex_doi": "10.32614/CRAN.package.quanteda.textplots"
+        },
+        {
+          "name": "quanteda.textmodels",
+          "cran": true,
+          "github": "quanteda/quanteda.textmodels",
+          "bibtex_doi": "10.32614/CRAN.package.quanteda.textmodels"
+        },
+        {
+          "name": "quanteda.tidy",
+          "cran": true,
+          "github": "quanteda/quanteda.tidy",
+          "bibtex_doi": "10.32614/CRAN.package.quanteda.tidy"
+        },
+        {
+          "name": "readtext",
+          "cran": true,
+          "github": "quanteda/readtext",
+          "docs": "https://readtext.quanteda.io",
+          "doi": "10.5281/zenodo.1244311",
+          "doi_kind": "Zenodo",
+          "bibtex_doi": "10.32614/CRAN.package.readtext"
+        },
+        {
+          "name": "spacyr",
+          "cran": true,
+          "github": "quanteda/spacyr",
+          "docs": "https://spacyr.quanteda.io",
+          "doi": "10.5281/zenodo.1199665",
+          "doi_kind": "Zenodo",
+          "bibtex_doi": "10.32614/CRAN.package.spacyr"
+        },
+        {
+          "name": "quanteda.corpora",
+          "cran": false,
+          "github": "quanteda/quanteda.corpora"
+        },
+        {
+          "name": "quanteda.dictionaries",
+          "cran": false,
+          "github": "kbenoit/quanteda.dictionaries"
+        },
+        {
+          "name": "stopwords",
+          "cran": true,
+          "github": "quanteda/stopwords",
+          "docs": "https://quanteda.github.io/stopwords/",
+          "bibtex_doi": "10.32614/CRAN.package.stopwords"
+        },
+        {
+          "name": "nsyllable",
+          "cran": true,
+          "github": "quanteda/nsyllable",
+          "bibtex_doi": "10.32614/CRAN.package.nsyllable"
+        }
       ]
     },
     {
       "id": "coauthor",
       "packages": [
-        {"name": "tokenizers", "cran": true, "github": "ropensci/tokenizers", "docs": "https://docs.ropensci.org/tokenizers/", "doi": "10.21105/joss.00655", "doi_kind": "JOSS", "bibtex_doi": "10.21105/joss.00655", "note": "with Lincoln A. Mullen and others"}
+        {
+          "name": "quallmer",
+          "cran": true,
+          "github": "quallmer/quallmer",
+          "docs": "https://quallmer.github.io/quallmer/",
+          "bibtex_doi": "10.32614/CRAN.package.quallmer",
+          "note": "with Seraphine F. Maerz"
+        },
+        {
+          "name": "quallmer.app",
+          "cran": true,
+          "github": "quallmer/quallmer.app",
+          "bibtex_doi": "10.32614/CRAN.package.quallmer.app",
+          "note": "with Seraphine F. Maerz"
+        },
+        {
+          "name": "tokenizers",
+          "cran": true,
+          "github": "ropensci/tokenizers",
+          "docs": "https://docs.ropensci.org/tokenizers/",
+          "doi": "10.21105/joss.00655",
+          "doi_kind": "JOSS",
+          "bibtex_doi": "10.21105/joss.00655",
+          "note": "with Lincoln A. Mullen and others"
+        }
       ]
     },
     {
       "id": "contributed",
       "packages": [
-        {"name": "tidytext", "cran": true, "github": "juliasilge/tidytext", "docs": "https://juliasilge.github.io/tidytext/", "doi": "10.21105/joss.00037", "doi_kind": "JOSS", "bibtex_doi": "10.21105/joss.00037"},
-        {"name": "ellmer", "cran": true, "github": "tidyverse/ellmer", "docs": "https://ellmer.tidyverse.org", "bibtex_doi": "10.32614/CRAN.package.ellmer"}
+        {
+          "name": "tidytext",
+          "cran": true,
+          "github": "juliasilge/tidytext",
+          "docs": "https://juliasilge.github.io/tidytext/",
+          "doi": "10.21105/joss.00037",
+          "doi_kind": "JOSS",
+          "bibtex_doi": "10.21105/joss.00037"
+        },
+        {
+          "name": "ellmer",
+          "cran": true,
+          "github": "tidyverse/ellmer",
+          "docs": "https://ellmer.tidyverse.org",
+          "bibtex_doi": "10.32614/CRAN.package.ellmer"
+        }
       ]
     }
   ]
