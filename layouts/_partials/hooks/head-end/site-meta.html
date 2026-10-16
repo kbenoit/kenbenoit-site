@@ -1,3 +1,9 @@
+{{- /* Google asks for favicons in multiples of 48px; the theme's own <link rel=icon> is only 32px. */ -}}
+{{- with resources.Get "media/icon.png" }}
+{{- $i48 := .Resize "48x48 png" }}{{ $i192 := .Resize "192x192 png" }}
+<link rel="icon" type="image/png" sizes="48x48" href="{{ $i48.RelPermalink }}">
+<link rel="icon" type="image/png" sizes="192x192" href="{{ $i192.RelPermalink }}">
+{{- end }}
 {{- if site.Params.mysite.discovery }}
 <meta name="generator" content="Created using GaryKing.org/mysite (https://gking.harvard.edu/mysite)">
 {{- end }}
