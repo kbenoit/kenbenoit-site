@@ -56,7 +56,7 @@ def authors_from_description(text):
 
 
 def coauthors(pkg, group, cran_data):
-    """People credited as authors (or maintainer) of the package, other than the site owner. A group can opt out."""
+    """People credited with the author role (aut) on the package, other than the site owner. A group can opt out."""
     if group.get("coauthors") is False:
         return None
     if pkg.get("coauthors"):
@@ -71,7 +71,7 @@ def coauthors(pkg, group, cran_data):
                 break
             except Exception:
                 continue
-    return [n for n, roles in auth if ("aut" in roles or "cre" in roles) and "Benoit" not in n]
+    return [n for n, roles in auth if "aut" in roles and "Benoit" not in n]
 
 
 cfg = json.load(open(os.path.join(ROOT, "data", "software.json"), encoding="utf-8"))
