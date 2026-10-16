@@ -34,6 +34,8 @@ Package versions and total download counts (from the Posit CRAN mirror, since 20
 
 **MOE 2025 Special Programmatic Grant**, Singapore Ministry of Education, for “Computational Social Simulations for Aiding Policy Design” (SSRC2025-SPG-001), 2026–2031. Co-Principal Investigator. S$1,727,392 total.
 
+**Discovery Project**, Australian Research Council, for “AI analysis of deliberation quality in Australian Parliament debates”, 2024–2026. Partner Investigator. AUD 370,230 total.
+
 **ERC Proof-of-Concept Grant**, European Commission, for "QUANTEDA:
  Quantitative Analysis of Textual Data" (number 812960),
  2018–2020.  €150,000 total.
