@@ -10,7 +10,7 @@
   {{- $s := index $stats $n | default dict -}}
   {{- $home := .docs | default (printf "https://github.com/%s" .github) }}
   <li class="pkg">
-    <p class="pkg-head"><a class="pkg-name" href="{{ $home }}" rel="noopener">{{ $n }}</a>{{ with $s.title }} <span class="pkg-title">{{ . }}</span>{{ end }}{{ with $pkg.note }} <span class="pkg-note">({{ . }})</span>{{ end }}</p>
+    <p class="pkg-head"><a class="pkg-name" href="{{ $home }}" rel="noopener">{{ $n }}</a>{{ with $s.title }} <span class="pkg-title">{{ . }}</span>{{ end }}{{ with $s.coauthors }}{{ $c := . }}{{ $k := len $c }} <span class="pkg-note">(with {{ if eq $k 1 }}{{ index $c 0 }}{{ else if eq $k 2 }}{{ index $c 0 }} and {{ index $c 1 }}{{ else }}{{ delimit (first (sub $k 1) $c) ", " }}, and {{ index $c (sub $k 1) }}{{ end }})</span>{{ end }}</p>
     <p class="pkg-badges">
       {{- if $pkg.cran }}
       {{- with $s.version }}<a class="pbadge" href="https://cran.r-project.org/package={{ $n }}" title="Current version on CRAN"><span class="pb-l">CRAN</span><span class="pb-v">{{ . }}</span></a>{{ end }}

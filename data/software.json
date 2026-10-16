@@ -87,15 +87,13 @@
           "cran": true,
           "github": "quallmer/quallmer",
           "docs": "https://quallmer.github.io/quallmer/",
-          "bibtex_doi": "10.32614/CRAN.package.quallmer",
-          "note": "with Seraphine F. Maerz"
+          "bibtex_doi": "10.32614/CRAN.package.quallmer"
         },
         {
           "name": "quallmer.app",
           "cran": true,
           "github": "quallmer/quallmer.app",
-          "bibtex_doi": "10.32614/CRAN.package.quallmer.app",
-          "note": "with Seraphine F. Maerz"
+          "bibtex_doi": "10.32614/CRAN.package.quallmer.app"
         },
         {
           "name": "tokenizers",
@@ -105,7 +103,12 @@
           "doi": "10.21105/joss.00655",
           "doi_kind": "JOSS",
           "bibtex_doi": "10.21105/joss.00655",
-          "note": "with Lincoln A. Mullen and others"
+          "coauthors": [
+            "Lincoln A. Mullen",
+            "Os Keyes",
+            "Dmitry Selivanov",
+            "Jeffrey Arnold"
+          ]
         }
       ]
     },
@@ -128,7 +131,8 @@
           "docs": "https://ellmer.tidyverse.org",
           "bibtex_doi": "10.32614/CRAN.package.ellmer"
         }
-      ]
+      ],
+      "coauthors": false
     }
   ]
 }

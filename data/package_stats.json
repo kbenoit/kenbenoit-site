@@ -5,24 +5,54 @@
       "version": "4.5.0",
       "title": "Quantitative Analysis of Textual Data",
       "downloads_total": 2140569,
+      "coauthors": [
+        "Kohei Watanabe",
+        "Haiyan Wang",
+        "Paul Nulty",
+        "Adam Obeng",
+        "Stefan Müller",
+        "Akitaka Matsuo",
+        "William Lowe"
+      ],
       "bibtex": true
     },
     "quanteda.textstats": {
       "version": "0.97.2",
       "title": "Textual Statistics for the Quantitative Analysis of Textual Data",
       "downloads_total": 309916,
+      "coauthors": [
+        "Kohei Watanabe",
+        "Haiyan Wang",
+        "Jiong Wei Lua",
+        "Jouni Kuha"
+      ],
       "bibtex": true
     },
     "quanteda.textplots": {
       "version": "0.96.1",
       "title": "Plots for the Quantitative Analysis of Textual Data",
       "downloads_total": 230333,
+      "coauthors": [
+        "Kohei Watanabe",
+        "Haiyan Wang",
+        "Adam Obeng",
+        "Stefan Müller",
+        "Akitaka Matsuo"
+      ],
       "bibtex": true
     },
     "quanteda.textmodels": {
       "version": "0.9.10",
       "title": "Scaling Models and Classifiers for Textual Data",
       "downloads_total": 213337,
+      "coauthors": [
+        "Kohei Watanabe",
+        "Haiyan Wang",
+        "Patrick O. Perry",
+        "Benjamin Lauderdale",
+        "Johannes Gruber",
+        "William Lowe"
+      ],
       "bibtex": true
     },
     "quanteda.tidy": {
@@ -35,24 +65,37 @@
       "version": "0.92.1",
       "title": "Import and Handling for Plain and Formatted Text Files",
       "downloads_total": 576573,
+      "coauthors": [
+        "Adam Obeng"
+      ],
       "bibtex": true
     },
     "spacyr": {
       "version": "1.3.0",
       "title": "Wrapper to the spaCy NLP Library",
       "downloads_total": 440812,
+      "coauthors": [
+        "Akitaka Matsuo"
+      ],
       "bibtex": true
     },
     "quanteda.corpora": {
       "title": "A collection of corpora for quanteda"
     },
     "quanteda.dictionaries": {
-      "title": "Dictionaries for text analysis"
+      "title": "Dictionaries for text analysis",
+      "coauthors": [
+        "Stefan Müller"
+      ]
     },
     "stopwords": {
       "version": "2.3",
       "title": "Multilingual Stopword Lists",
       "downloads_total": 2160690,
+      "coauthors": [
+        "David Muhr",
+        "Kohei Watanabe"
+      ],
       "bibtex": true
     },
     "nsyllable": {
@@ -65,18 +108,30 @@
       "version": "0.5.0",
       "title": "Qualitative Analysis with Large Language Models",
       "downloads_total": 3012,
+      "coauthors": [
+        "Seraphine F. Maerz"
+      ],
       "bibtex": true
     },
     "quallmer.app": {
       "version": "0.1.0",
       "title": "Interactive Validation App for quallmer",
       "downloads_total": 3068,
+      "coauthors": [
+        "Seraphine F. Maerz"
+      ],
       "bibtex": true
     },
     "tokenizers": {
       "version": "0.3.0",
       "title": "Fast, Consistent Tokenization of Natural Language Text",
       "downloads_total": 4596517,
+      "coauthors": [
+        "Lincoln A. Mullen",
+        "Os Keyes",
+        "Dmitry Selivanov",
+        "Jeffrey Arnold"
+      ],
       "bibtex": true
     },
     "tidytext": {

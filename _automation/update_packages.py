@@ -3,7 +3,7 @@
 
 Reads data/software.json (the package list: edit that to add or remove a package) and writes
   data/package_stats.json   CRAN version, CRAN title and total downloads since 2012, or the GitHub description for
-                            packages not on CRAN, plus the date fetched
+                            packages not on CRAN, the credited co-authors, plus the date fetched
   static/bibtex/<pkg>.bib   a BibTeX entry for each package that has a DOI (CRAN's DOI, or JOSS), fetched from doi.org
 
 Standard library only. Run:  python3 _automation/update_packages.py   then rebuild and commit the changed files.
@@ -35,6 +35,45 @@ def clean_title(t):
     return re.sub(r"\s+", " ", t).strip()
 
 
+def authors_from_cran(author_field):
+    """Name [roles] pairs from a CRAN `Author` field."""
+    return [(m.group(1).strip(), [r.strip() for r in m.group(2).split(",")])
+            for m in re.finditer(r"([A-ZÀ-Ý][^\[\],()]*?)\s*\[([^\]]+)\]", author_field)]
+
+
+def authors_from_description(text):
+    """Name, roles pairs from the Authors@R field of a DESCRIPTION file (packages not on CRAN)."""
+    m = re.search(r"Authors@R:\s*(.*?)(?=\n[A-Za-z][A-Za-z/@-]*:)", text, re.S)
+    out = []
+    for pm in re.finditer(r"person\((.*?)\)\s*(?:,|\)|$)", m.group(1) if m else "", re.S):
+        s = pm.group(1)
+        g = re.search(r'(?:given\s*=\s*)?"([^"]+)"', s)
+        f = re.search(r'family\s*=\s*"([^"]+)"', s) or re.search(r'"[^"]+"\s*,\s*"([^"]+)"', s)
+        r = re.search(r'role\s*=\s*(c\([^)]*\)|"[^"]*")', s)
+        if g and f:
+            out.append((f"{g.group(1)} {f.group(1)}", re.findall(r'"([a-z]+)"', r.group(1)) if r else []))
+    return out
+
+
+def coauthors(pkg, group, cran_data):
+    """People credited as authors (or maintainer) of the package, other than the site owner. A group can opt out."""
+    if group.get("coauthors") is False:
+        return None
+    if pkg.get("coauthors"):
+        return pkg["coauthors"]
+    auth = []
+    if cran_data:
+        auth = authors_from_cran(cran_data.get("Author", ""))
+    elif pkg.get("github"):
+        for branch in ("master", "main"):
+            try:
+                auth = authors_from_description(fetch(f"https://raw.githubusercontent.com/{pkg['github']}/{branch}/DESCRIPTION"))
+                break
+            except Exception:
+                continue
+    return [n for n, roles in auth if ("aut" in roles or "cre" in roles) and "Benoit" not in n]
+
+
 cfg = json.load(open(os.path.join(ROOT, "data", "software.json"), encoding="utf-8"))
 stats, bibs = {}, 0
 os.makedirs(os.path.join(ROOT, "static", "bibtex"), exist_ok=True)
@@ -43,6 +82,7 @@ for g in cfg["groups"]:
         n = p["name"]
         print(n)
         entry = {}
+        d = None
         if p.get("cran"):
             d = get_json(f"https://crandb.r-pkg.org/{n}")
             dl = get_json(f"https://cranlogs.r-pkg.org/downloads/total/2012-10-01:{datetime.date.today().isoformat()}/{n}")   # all time (the logs begin in October 2012)
@@ -55,6 +95,9 @@ for g in cfg["groups"]:
             d = get_json(f"https://api.github.com/repos/{p['github']}")
             if d and d.get("description"):
                 entry["title"] = clean_title(d["description"])
+        co = coauthors(p, g, d if p.get("cran") else None)
+        if co:
+            entry["coauthors"] = co
         if p.get("bibtex_doi"):
             try:
                 bib = fetch(f"https://doi.org/{p['bibtex_doi']}", {"Accept": "application/x-bibtex"}).strip()
