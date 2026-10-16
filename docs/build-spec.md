@@ -1,6 +1,6 @@
 # kenbenoit.net Rebuild: Build Specification
 
-**Status:** v0.2, 15 October 2026. Owner decisions in §14 are settled; ready for Phase 1.
+**Status:** v1.0. Live at https://kenbenoit.net since 16 October 2026 (Phases 1 to 5 complete). Owner decisions in §14 are settled; later design changes are recorded in the sections they affect.
 **Owner:** Kenneth Benoit
 **Build agent:** Claude Code (or another coding agent), working in a new repository
 
@@ -389,6 +389,8 @@ Implement mysite's "AI & Search Visibility" section in full:
 | 5 | **Cut-over:** point kenbenoit.net at the new Netlify site, then re-run the URL check against production | Owner gives the go-ahead |
 
 Rollback means pointing the domain back to the old Netlify site.
+
+**Phase 5 record (16 October 2026):** `kenbenoit.net` and `www` were moved from the old Netlify project (`kenbenoit`) to `kenbenoit-site`; `www` is redirected to `kenbenoit.net`, HTTPS is forced, and the `www` CNAME at Namecheap now points at `kenbenoit-site.netlify.app`. Reports against production are in `docs/reports/production-*.md`. The old project is kept, with only its `netlify.app` address, as a fallback.
 
 ---
 
