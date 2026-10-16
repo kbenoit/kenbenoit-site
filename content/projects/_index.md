@@ -5,7 +5,7 @@ sections: [Projects, Software, Datasets, Grants, Awards]
 
 ## Software
 
-Package versions and download counts were last updated {{< packages-date >}}.
+Package versions and total download counts (from the Posit CRAN mirror, since 2012) were last updated {{< packages-date >}}.
 
 ### Packages I created and maintain
 

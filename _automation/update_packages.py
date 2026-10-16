@@ -2,7 +2,7 @@
 """Refresh the software badges on /projects/.
 
 Reads data/software.json (the package list: edit that to add or remove a package) and writes
-  data/package_stats.json   CRAN version, CRAN title and downloads in the last month, or the GitHub description for
+  data/package_stats.json   CRAN version, CRAN title and total downloads since 2012, or the GitHub description for
                             packages not on CRAN, plus the date fetched
   static/bibtex/<pkg>.bib   a BibTeX entry for each package that has a DOI (CRAN's DOI, or JOSS), fetched from doi.org
 
@@ -45,12 +45,12 @@ for g in cfg["groups"]:
         entry = {}
         if p.get("cran"):
             d = get_json(f"https://crandb.r-pkg.org/{n}")
-            dl = get_json(f"https://cranlogs.r-pkg.org/downloads/total/last-month/{n}")
+            dl = get_json(f"https://cranlogs.r-pkg.org/downloads/total/2012-10-01:{datetime.date.today().isoformat()}/{n}")   # all time (the logs begin in October 2012)
             if d:
                 entry["version"] = d.get("Version")
                 entry["title"] = clean_title(d.get("Title", ""))
             if isinstance(dl, list) and dl:
-                entry["downloads_month"] = dl[0].get("downloads")
+                entry["downloads_total"] = dl[0].get("downloads")
         elif p.get("github"):
             d = get_json(f"https://api.github.com/repos/{p['github']}")
             if d and d.get("description"):

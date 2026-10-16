@@ -14,7 +14,7 @@
     <p class="pkg-badges">
       {{- if $pkg.cran }}
       {{- with $s.version }}<a class="pbadge" href="https://cran.r-project.org/package={{ $n }}" title="Current version on CRAN"><span class="pb-l">CRAN</span><span class="pb-v">{{ . }}</span></a>{{ end }}
-      {{- with $s.downloads_month }}<a class="pbadge" href="https://cran.r-project.org/package={{ $n }}" title="Downloads from CRAN in the last month"><span class="pb-l">downloads</span><span class="pb-v">{{ if ge . 10000 }}{{ div (int .) 1000 }}k{{ else }}{{ lang.FormatNumber 0 . }}{{ end }}/month</span></a>{{ end }}
+      {{- with $s.downloads_total }}<a class="pbadge" href="https://cran.r-project.org/package={{ $n }}" title="Total downloads from the Posit (RStudio) CRAN mirror since 2012"><span class="pb-l">downloads</span><span class="pb-v">{{ if ge . 1000000 }}{{ replace (printf "%.1fM" (div (float .) 1000000)) ".0M" "M" }}{{ else if ge . 10000 }}{{ div (int .) 1000 }}k{{ else }}{{ lang.FormatNumber 0 . }}{{ end }} total</span></a>{{ end }}
       {{- else }}
       <a class="pbadge" href="https://github.com/{{ $pkg.github }}" title="Source code on GitHub"><span class="pb-l">GitHub</span><span class="pb-v">{{ $pkg.github }}</span></a>
       {{- end }}
