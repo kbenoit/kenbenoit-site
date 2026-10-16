@@ -15,6 +15,7 @@
           <p class="lead-role">{{ .role }}</p>
           <p class="lead-org">{{ .org }}</p>
           {{ with .description }}<p class="lead-desc">{{ . }}</p>{{ end }}
+          {{ with .url }}<p class="lead-desc"><a href="{{ . }}" rel="noopener">{{ . | replaceRE "^https?://" "" }}</a></p>{{ end }}
         </div>
         <p class="lead-years">{{ .years }}</p>
       </li>
