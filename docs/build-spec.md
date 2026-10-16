@@ -212,7 +212,7 @@ quanteda (JOSS 2018) is not featured here because the quanteda project card alre
 | Working Papers | 5 | `report` | Working Papers |
 | Conference/unpublished | a few | `report` | Working Papers |
 
-Tabs, each showing a live count as on Brandon's site: **All · Articles · Books · Chapters · Software & Data · Working Papers · Other**
+Tabs, each showing a live count as on Brandon's site: **All · Articles · Books · Chapters · Working Papers · Other** (the Software & Data tab was removed on 16 October 2026; software and datasets live on /projects/)
 
 ### 7.2 One page per item, at `/publication/<slug>/`
 

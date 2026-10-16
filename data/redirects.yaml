@@ -37,3 +37,4 @@
 - { from: /publication/benoit-1996-ezi-n-easy-program/, to: "/projects/#software" }
 - { from: /publication/king-1999-record-american-democracy-1984/, to: "/projects/#datasets" }
 - { from: /publication/benoit-2012-quanteda-quantitative-analysis-textual/, to: "/projects/#software" }
+- { from: /publication/benoit-2004-party-policy-modern-democracies/, to: "/projects/#datasets" }
