@@ -16,7 +16,7 @@
   image: quanteda.png   # quanteda project logo, supplied by the owner
   description: The quanteda family of R packages for the quantitative analysis of textual data.
   # Home page card only:
-  home_description: The quanteda family of R packages for the quantitative analysis of textual data, including [spacyr](https://spacyr.quanteda.io), [readtext](https://readtext.quanteda.io), [quanteda.textstats](https://github.com/quanteda/quanteda.textstats), [quanteda.textmodels](https://github.com/quanteda/quanteda.textmodels), [quanteda.textplots](https://github.com/quanteda/quanteda.textplots) and [quanteda.tidy](https://github.com/quanteda/quanteda.tidy).
+  home_description: The quanteda family of R packages for the quantitative analysis of textual data, including companion packages for plotting, modelling, and obtaining statistics for textual data, plus packages for interfacing with Python's spaCy ([spacyr](https://spacyr.quanteda.io)) and reading texts ([readtext](https://readtext.quanteda.io)), multilingual stopwords, and counting syllables.
   links:
     - { name: quanteda.io, url: "https://quanteda.io" }
 - slug: ppmd
