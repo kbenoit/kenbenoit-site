@@ -110,7 +110,8 @@ params:
       political texts and social media, and my substantive work covers
       comparative party competition, the European Parliament, and electoral
       systems. My software includes the quanteda family of R packages for
-      quantitative text analysis.
+      quantitative text analysis, with the nine packages I maintain on the
+      Comprehensive R Archive Network (CRAN) downloaded over 6 million times.
   features:
     search:
       provider: pagefind
