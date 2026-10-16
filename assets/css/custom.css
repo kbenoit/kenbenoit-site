@@ -107,6 +107,7 @@ a:hover { color: var(--color-link-hover-text); }
 .social-link svg { width: 17px; height: 17px; fill: currentColor; }
 .social-link svg[stroke] { fill: none; }
 .social-link:hover { background: var(--color-accent); border-color: var(--color-accent); color: #fff; }
+.social-link { white-space: nowrap; overflow-wrap: normal; }
 .social-cv { width: auto; padding: 0 0.8rem; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.04em; }
 @media (min-width: 900px) { .social-link { width: 36px; height: 36px; } }
 
@@ -224,6 +225,9 @@ a:hover { color: var(--color-link-hover-text); }
 .prose .btn:hover { color: #fff; }
 .prose img { max-width: 100%; height: auto; }
 .prose table { font-size: 0.92rem; }
+.prose ul.social { list-style: none; padding-left: 0; margin: 1.25rem 0 0; }
+.prose .social li { margin: 0; padding: 0; }
+.prose .social a { text-decoration: none; }
 .bio-portrait { float: right; width: 150px; height: 150px; margin: 0 0 1rem 1.5rem; border-radius: 12px; object-fit: cover; box-shadow: var(--shadow-soft); }
 .proj-img-lg { float: right; height: 96px; width: auto; margin: 0 0 1rem 1.5rem; }
 .related { margin-top: 2.5rem; }
