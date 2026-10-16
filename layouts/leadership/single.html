@@ -1,0 +1,23 @@
+{{ define "main" }}
+<main id="main" class="wrap page" data-pagefind-body>
+  <h1>{{ .Title }}</h1>
+  <div class="prose page-body-text">{{ .Content }}</div>
+  {{ range site.Data.leadership }}
+  <section class="lead-group" aria-labelledby="g-{{ .group | anchorize }}">
+    <h2 id="g-{{ .group | anchorize }}" class="lead-heading">{{ .group }}</h2>
+    <ul class="lead-list">
+      {{ range .roles }}
+      <li class="lead-row">
+        <div class="lead-main">
+          <p class="lead-role">{{ .role }}</p>
+          <p class="lead-org">{{ .org }}</p>
+          {{ with .description }}<p class="lead-desc">{{ . }}</p>{{ end }}
+        </div>
+        <p class="lead-years">{{ .years }}</p>
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+  {{ end }}
+</main>
+{{ end }}

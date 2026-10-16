@@ -38,11 +38,13 @@ B.A., University of South Carolina, Columbia, SC. 1986–1991. Summa cum laude. 
 
 ## Service
 
+A summary of leadership and board roles, with short descriptions, is on the [Leadership](/leadership/) page.
+
 ### Service to the discipline
 
 Social Science Research Council, Singapore: Council member, 2025–present.
 
-European Political Science Society: Co-founder; Treasurer and Council member, 2025–present.
+European Political Science Society: Director and Chief Financial Officer (Treasurer); Board Member, 2025–present.
 
 _[European Political Science Association](https://www.eps-academic.org/)_: Co-founder; Executive Director 2017–2024; Treasurer/Vice-President 2011–2017; Programme Committee Chair, 2011, 2014, 2017, 2019, and 2023 Annual Conferences.
 

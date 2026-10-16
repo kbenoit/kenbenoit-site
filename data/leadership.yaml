@@ -1,0 +1,74 @@
+# Leadership and board roles for /leadership/. Groups and roles appear in this order.
+# `years` is free text. Descriptions are drafts for the owner to edit; leave `description` out for a plain row.
+- group: Academic leadership
+  roles:
+    - role: Dean, School of Social Sciences
+      org: Singapore Management University
+      years: 2024–present
+      description: Head of the School of Social Sciences, responsible for its academic programmes, research and faculty.
+    - role: Advisory Board Member
+      org: Data Science Institute, London School of Economics and Political Science
+      years: 2024–present
+      description: Member of the institute's advisory board, following four years as its director.
+    - role: Director, Data Science Institute
+      org: London School of Economics and Political Science
+      years: 2020–2024
+      description: Directed the LSE's institute for data science, bringing together research, teaching and training in data science across the School.
+    - role: Programme Director, LSE Summer School in Methods, Data Science, and Mathematics
+      org: London School of Economics and Political Science
+      years: 2018–2020
+      description: Directed the summer school's programme in research methods, data science and mathematics.
+    - role: Director, Social and Economic Data Sciences Unit
+      org: London School of Economics and Political Science
+      years: 2016–2018
+      description: Directed the LSE's Social and Economic Data Sciences Unit.
+    - role: Head of Department of Methodology
+      org: London School of Economics and Political Science
+      years: 2011–2013; 2015–2018
+      description: Head of the department, over two terms.
+    - role: Director, Doctoral Training Centre
+      org: London School of Economics and Political Science
+      years: 2011–2013
+      description: Directed the LSE's first Doctoral Training Centre, responsible for doctoral research training.
+    - role: Head of Department of Political Science
+      org: Trinity College Dublin
+      years: 2008–2010
+      description: Head of the department of political science.
+- group: Boards and learned societies
+  roles:
+    - role: Director and Chief Financial Officer (Treasurer); Board Member
+      org: European Political Science Society
+      years: 2025–present
+      description: Responsible for the society's finances as Treasurer, and a member of its board.
+    - role: Council Member
+      org: Social Science Research Council, Singapore
+      years: 2025–present
+      description: Member of the council of the Social Science Research Council.
+    - role: Co-founder; Executive Director; Treasurer and Vice-President
+      org: European Political Science Association
+      years: 2011–2024
+      description: Co-founded the association. Treasurer and Vice-President from 2011 to 2017, then Executive Director from 2017 to 2024. Chaired the programme committee for the 2011, 2014, 2017, 2019 and 2023 annual conferences.
+    - role: Council Member
+      org: American Political Science Association
+      years: 2013–2015
+      description: Member of the association's council.
+- group: Editorial roles
+  roles:
+    - role: Editorial Board
+      org: Political Science Research and Methods
+      years: 2016–present
+    - role: Associate Editor
+      org: American Political Science Review
+      years: 2016–2020
+    - role: Associate Editor
+      org: Political Science Research and Methods
+      years: 2012–2016
+    - role: Editorial Board
+      org: American Political Science Review
+      years: 2012–2016
+    - role: Editorial Board
+      org: Electoral Studies
+      years: 2003–2022
+    - role: Editorial Board, book series Interests, Identities, and Institutions in Comparative Politics
+      org: University of Michigan Press
+      years: 2006–2022
