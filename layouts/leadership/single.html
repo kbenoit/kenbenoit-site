@@ -1,6 +1,9 @@
 {{ define "main" }}
 <main id="main" class="wrap page" data-pagefind-body>
   <h1>{{ .Title }}</h1>
+  <nav class="page-sections" aria-label="On this page">
+    {{ range site.Data.leadership }}<a href="#g-{{ .group | anchorize }}">{{ .group }}</a>{{ end }}
+  </nav>
   <div class="prose page-body-text">{{ .Content }}</div>
   {{ range site.Data.leadership }}
   <section class="lead-group" aria-labelledby="g-{{ .group | anchorize }}">
