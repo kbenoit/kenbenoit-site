@@ -10,7 +10,11 @@
 <link rel="preload" href="{{ "fonts/atkinson-hyperlegible-latin-700-normal.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
 {{- $o := site.Params.owner }}
 {{- if and .IsHome site.Params.mysite.discovery }}
-<script type="application/ld+json">{{ dict "@context" "https://schema.org" "@type" "Person" "name" $o.name "jobTitle" $o.title "affiliation" (dict "@type" "Organization" "name" $o.institution) "url" site.Home.Permalink "sameAs" (slice $o.scholar $o.github) "isBasedOn" "https://gking.harvard.edu/mysite" | jsonify | safeJS }}</script>
+{{- $same := slice }}{{ range $o.social }}{{ if not (hasPrefix .url "mailto:") }}{{ $same = $same | append .url }}{{ end }}{{ end }}
+{{- $img := "" }}{{ with resources.Get $o.photo }}{{ $img = (.Resize "512x512 q85").Permalink }}{{ end }}
+{{- $ld := dict "@context" "https://schema.org" "@type" "Person" "name" $o.name "jobTitle" $o.title "affiliation" (dict "@type" "CollegeOrUniversity" "name" $o.institution "url" $o.institution_url) "alumniOf" (dict "@type" "CollegeOrUniversity" "name" "Harvard University" "url" "https://www.harvard.edu") "knowsAbout" (slice "Computational social science" "Quantitative text analysis" "Political science" "Natural language processing" "Large language models" "Party competition" "Electoral systems") "url" site.Home.Permalink "sameAs" $same "isBasedOn" "https://gking.harvard.edu/mysite" }}
+{{- with $img }}{{ $ld = merge $ld (dict "image" .) }}{{ end }}
+<script type="application/ld+json">{{ $ld | jsonify | safeJS }}</script>
 {{- end }}
 {{- if and .IsPage (eq .Section "publication") (not .Params.private) }}
 {{- $doi := .Params.doi }}
