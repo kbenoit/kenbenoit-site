@@ -94,6 +94,16 @@ params:
       - { label: "LinkedIn", icon: linkedin, url: "https://www.linkedin.com/in/krbenoit/" }
       - { label: "GitHub", icon: github, url: "https://github.com/kbenoit" }
       - { label: "Stack Overflow", icon: stackoverflow, url: "https://stackoverflow.com/users/4158274/ken-benoit" }
+    # Second paragraph on the home page, followed by a link to /leadership/.
+    intro_more: >-
+      My leadership roles have involved a mix of academic and organisational
+      experience. Previously, I directed the Data Science Institute at the LSE and
+      headed its Department of Methodology; before that I was Head of the
+      Department of Political Science at Trinity College Dublin. I co-founded the
+      European Political Science Association and served as one of its directors
+      until 2024, and I am now a Director and Treasurer of the European Political
+      Science Society as well as a member of Singapore's Social Science Research
+      Council.
     # Short orientation text for the home page; the full bio lives on /bio/.
     intro: >-
       My research uses large language models and machine learning to analyze

@@ -161,8 +161,8 @@ a:hover { color: var(--color-link-hover-text); }
 .cite { padding: 0.8rem 0; border-bottom: 1px solid var(--color-border); }
 .cite[hidden] { display: none; }
 .cite-line { margin: 0; line-height: 1.55; }
-.cite-line a, .proj-desc a { text-decoration-line: underline; text-decoration-thickness: 1px; text-decoration-color: rgba(35, 85, 159, 0.5); text-underline-offset: 0.18em; }
-.cite-line a:hover, .proj-desc a:hover { text-decoration-color: currentColor; }
+.cite-line a, .proj-desc a, .hero-intro a { text-decoration-line: underline; text-decoration-thickness: 1px; text-decoration-color: rgba(35, 85, 159, 0.5); text-underline-offset: 0.18em; }
+.cite-line a:hover, .proj-desc a:hover, .hero-intro a:hover { text-decoration-color: currentColor; }
 .cite-actions { display: flex; flex-wrap: wrap; gap: 0.1rem 1rem; margin-top: 0.25rem; }
 .act { display: inline-flex; align-items: center; gap: 0.3rem; font: inherit; font-size: 0.82rem; font-weight: 600; line-height: 1.6; color: var(--color-text-muted); background: none; border: 0; padding: 0; text-decoration: none; cursor: pointer; }
 .act[hidden] { display: none; }

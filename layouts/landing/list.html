@@ -12,6 +12,7 @@
       <h1 id="hero-name">{{ $o.name }}</h1>
       <p class="hero-title">{{ $o.title }}</p>
       <p class="hero-intro">{{ $o.intro }}</p>
+      {{ with $o.intro_more }}<p class="hero-intro">{{ . }} <a href="{{ "leadership/" | relURL }}">Leadership &rarr;</a></p>{{ end }}
       <ul class="social" aria-label="Contact and profiles">
         {{ range $o.social }}
           {{- $svg := resources.Get (printf "icons/%s.svg" .icon) -}}
