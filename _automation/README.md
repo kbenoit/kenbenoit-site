@@ -19,6 +19,10 @@ python3 _automation/check_legacy_urls.py --url https://deploy-preview-7--kenbeno
 python3 _automation/check_ai_visibility.py --url https://kenbenoit.net
 ```
 
+## Automatic monthly refresh
+
+`.github/workflows/refresh-packages.yml` runs the updater on the 1st of every month at 03:00 UTC (and on demand: Actions tab, "Refresh software package data", Run workflow). It rebuilds the site and runs both checks; only if they pass and the data changed does it commit to `main`, and Netlify deploys it. If a run fails you get an email from GitHub and nothing is published. GitHub pauses scheduled workflows after 60 days without repository activity, so an occasional commit or a manual run keeps it going.
+
 ## Adding or removing a package
 
 Edit `data/software.json` (name, whether it is on CRAN, GitHub repository, documentation site, DOI), then run `python3 _automation/update_packages.py`.

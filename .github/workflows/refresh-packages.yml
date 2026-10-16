@@ -1,0 +1,60 @@
+name: Refresh software package data
+
+# Once a month (and on demand from the Actions tab) this refreshes the CRAN versions, download totals, co-author
+# lists and BibTeX files behind the badges on /projects/. It rebuilds the site and runs both site checks first; only
+# if everything passes and something changed does it commit the new data to main, which Netlify then deploys.
+on:
+  schedule:
+    - cron: "0 3 1 * *"      # 03:00 UTC on the 1st of each month
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.160.1
+    steps:
+      - uses: actions/checkout@v4
+      - name: Refresh package data
+        run: python3 _automation/update_packages.py
+      - name: Stop here if nothing changed
+        id: changed
+        run: |
+          if git diff --quiet -- data static/bibtex && [ -z "$(git ls-files --others --exclude-standard data static/bibtex)" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"; echo "No changes."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/setup-go@v5
+        if: steps.changed.outputs.changed == 'true'
+        with:
+          go-version: "1.22"
+      - uses: actions/setup-node@v4
+        if: steps.changed.outputs.changed == 'true'
+        with:
+          node-version: "22"
+      - name: Install Hugo (extended, pinned)
+        if: steps.changed.outputs.changed == 'true'
+        run: |
+          wget -q -O "${{ runner.temp }}/hugo.deb" "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb"
+          sudo dpkg -i "${{ runner.temp }}/hugo.deb"
+      - name: Build and check the site with the new data
+        if: steps.changed.outputs.changed == 'true'
+        run: |
+          npm ci
+          hugo --gc --minify
+          npx pagefind --site public
+          python3 _automation/check_legacy_urls.py --dir public
+          python3 _automation/check_ai_visibility.py --dir public
+      - name: Commit the new data to main
+        if: steps.changed.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/package_stats.json static/bibtex
+          git commit -m "Refresh software package data (automatic monthly update)"
+          git pull --rebase origin main
+          git push origin HEAD:main

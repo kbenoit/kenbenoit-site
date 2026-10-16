@@ -113,3 +113,10 @@ for g in cfg["groups"]:
 out = {"fetched": datetime.date.today().isoformat(), "packages": stats}
 json.dump(out, open(os.path.join(ROOT, "data", "package_stats.json"), "w", encoding="utf-8"), indent=2, ensure_ascii=False)
 print(f"\nWrote data/package_stats.json ({len(stats)} packages) and {bibs} BibTeX files.")
+
+# Sanity check, so a failed lookup is noticed instead of published: every CRAN package needs a version and a download total.
+missing = [p["name"] for g in cfg["groups"] for p in g["packages"]
+           if p.get("cran") and not (stats[p["name"]].get("version") and stats[p["name"]].get("downloads_total"))]
+if missing:
+    print("ERROR: no CRAN data for:", ", ".join(missing), file=sys.stderr)
+    sys.exit(1)
