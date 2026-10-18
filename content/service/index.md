@@ -9,7 +9,7 @@ Service to the discipline, editorial roles, university service and other profess
 
 *   Social Science Research Council, Singapore: Council member, 2025–present; Chair, [IDEAS Festival](https://www.ideasfestival.edu.sg) 2026.
 *   [European Political Science Society](https://epssnet.org/officers-and-council/): Director and Treasurer (Chief Financial Officer); ex officio member of the Council, 2025–present.
-*   European Political Science Association: Co-founder; Executive Director 2017–2024; Treasurer/Vice-President 2011–2017; Programme Committee Chair, 2011, 2014, 2017, 2019, and 2023 Annual Conferences.
+*   European Political Science Association: Co-founder; Executive Director 2017–2024; Treasurer/Vice-President 2009–2017; Programme Committee Chair, 2011, 2014, 2017, 2019, and 2023 Annual Conferences.
 *   American Political Science Association: Council member, 2013–2015.
 *   Advisory Board Member, Data Science Institute, London School of Economics and Political Science, 2024–present.
 
