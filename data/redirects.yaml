@@ -38,3 +38,5 @@
 - { from: /publication/king-1999-record-american-democracy-1984/, to: "/projects/#datasets" }
 - { from: /publication/benoit-2012-quanteda-quantitative-analysis-textual/, to: "/projects/#software" }
 - { from: /publication/benoit-2004-party-policy-modern-democracies/, to: "/projects/#datasets" }
+- { from: /pdfs/LaverBenoit_IPS2003.pdf, to: /publication/benoit-2003-estimating-irish-party-positions/ }
+- { from: /pdfs/partygroups_BJPS2.pdf, to: /pdfs/McElroy_Benoit_BJPS_2010.pdf }
